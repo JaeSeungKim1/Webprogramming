@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1=[
+            [1,2,3],
+            [4,5,6],
+            [7,8,9]
+    ]
+    arr1.forEach(e=> e.forEach(s=>document.write(s+"&nbsp"))+document.write("<br>"));
+/* 이차원 원소 출력법 feat stream 연산 */
+document.write("<br>");
+let subArr1=['a',1,4];
+let subArr2=['b',2,5];
+let subArr3=['c',3,6];
+let toArr=[subArr1,subArr2,subArr3];
+    toArr.forEach(s=> s.forEach(e=> document.write(e+"&nbsp"))+document.write("<br>"));
+    toArr.flat().filter(e=> e<65).forEach(f=> document.write(f+"<br>"));/* 아스키 코드로도 비교가능 a(97),b(98),c(99)...(122) */
+    </script>
+</body>
+</html>

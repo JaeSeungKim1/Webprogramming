@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>global attr</title>
+    <style>
+       .wrapper{color: orange;}
+       .wrapper p{color: purple;}
+       p.one{color:inherit;}/* 부모 속성을 상속 받는 경우 */
+       p.two{color:initial;}/* 기본 브라우저 색상 black */
+       p.three{color:unset;}/* 상속x */
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <p class="one">상속</p>
+        <p class="two">초기값</p>
+        <p class="three">상속하지 않음</p>
+        <p>비설정 상태</p>
+    </div>
+</body>
+</html>

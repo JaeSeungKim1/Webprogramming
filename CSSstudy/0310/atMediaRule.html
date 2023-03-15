@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS @media Rule</title>
+    <style>
+        body{background-color: darkorange; color: white;}
+             @media screen and (min-width:1000px){
+                body{background-color: lightblue;}
+            }
+            @media print{
+                body{background-color: red; color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <H3>미디어별 배경색 설정 변경</H3>
+    <P>뷰포트의 너비가 1000px이하인 경우 배경색을 변경</P>
+    <p>웹 브라우저와 프린트에서 배경색 및 글자의 색을 다르게 설정</p>
+</body>
+</html>

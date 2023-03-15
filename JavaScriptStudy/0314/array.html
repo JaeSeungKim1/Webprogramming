@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        let arr1=[1,"JavaScript",true];
+        let arr2=Array(2,"JavaScript",true);
+        let arr3= new Array(3,"JavaScript",true);
+        arr1.forEach(b=> document.write(b+"<br>"));
+        arr2.forEach(t=> document.write(t+"<br>"));
+        arr3.forEach(a=> document.write(a+"<br>"));
+        let arr4=[,,];/* 아무 것도 안써주면 undefined 자료형 null(x) */
+        /* 
+        let arr5=Array.of(element1,...) 원소 쭉 나열
+        let arr5=Array.from(배열); 깊은 복사
+        */
+        let arr5=Array.from(arr3);
+        arr5.forEach(a=> document.write(a+"<br>"));
+        arr4.forEach(s=> document.write(s+"<br>"));
+        Array.from(arr5).forEach(t=>document.write(t+"<br>"));
+        let res1=Array.isArray([]);
+        let res2=Array.isArray([1,2]);
+        let res3=Array.isArray(new Array());
+        document.write(res1+" "+res2+" "+res3+"<br>");
+        res1=Array.isArray({});
+        res2=Array.isArray(null);
+        res3=Array.isArray(new Array());
+        document.write(res1+" "+res2+" "+res3+"<br>");
+        arr1 =['abc','bcd','c','d','e','f','g','h'];
+        document.write(arr1.indexOf('c')+"<br>");
+        document.write(arr1.includes('abc')+"<br>");
+        /* let resplice = arr1.splice(2,2,'c'); *//* 시작 지점,자를 개수,...(집어 넣을 원소들)  배열 리턴*/
+        /* resplice.forEach(t=>document.write(t)); */
+
+        let rslice = arr1.slice(2,3);/* 위와는 다르게 시작지점,끝지점이며 리턴 값이 Object이다.*/
+        document.write(rslice);
+        document.write("<br>");
+        document.write(arr2.concat(arr3,"acbdcd"));/*concat 메소드 호출한 배열과 파라미터로 오는 배열이 앞뒤로 합쳐지며 두번째 파라미터는 뒤쪽의 원소로 자리 잡는다.
+        배열로 넣으면 배열 자체가 원소가 아닌 배열의 원소들이 뒤쪽에 하나하나 붙는다.*/
+        document.write("<br>");
+        document.write(arr2.reverse());
+        document.write("<br>");
+        document.write(arr1.sort());
+        let flatArr = [['a','b'],['a','b',['a','b']]];
+        document.write("<br>");
+        flatArr.flat().forEach(e=>document.write(e+"<br>"));
+        /*차원을 1개씩 깬다 3차원>>2차원  2차원>>1차원*/
+        /* 앞에 클래스 이름 부터 시작할 필요 없이 메소드만 붙여도 가능!(자바  Collections.sort(Comparator.reverse()) Arrays.sort(Comparator.reverse())) */
+        arr1.fill("a",1).forEach(e=> document.write(e+"<br>"));
+        /* 오버로딩 1(채울 원소),2(시작 인덱스),3(채울 개수)// 오버로딩  1(채울 원소),2(시작 범위)*/
+        document.write(arr1.join(''))/* 디폴트 구분자는 (,)  오버로딩 1(구분자)*/
+        /* IntStream을 쓸 필요 없음 */
+        document.write("<br>");
+        document.write("-----------------------------");
+        document.write("<br>");
+        //반복
+        arr2 =['1','2','3','4','5','6'];
+        arr2.forEach(t=>document.write(t+"<br>"));/* 함수형 인터페이스 consumer 매개변수로 가짐 */
+        /* 자바 향상된 for문 for(변수:자료구조) >>자바 스크립트 향상된 for문 for(변수 of 자료구조) */
+        for(c of arr2) document.write(c+"<br>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Gradient</title>
+    <style>
+        div{height:100px;}
+        .grad1{background: linear-gradient(to right,red,orange,yellow,green,blue,navy,purple);}
+        .grad2{background: linear-gradient(to right top, red,orange);
+            background: linear-gradient(180deg, red,orange);/* 180 == 360 == 540  시작 각도 지정*/
+        }/* 디폴트 값은(to bottom)  오버로딩*/
+        .grad3{
+            background:linear-gradient(to right,rgba(0,0,255,1),rgba(0,0,255,0));
+        }
+        .grad4{background: repeating-linear-gradient(to right,pink,green 10%,blue 15%);}
+        .grad5{background: radial-gradient(red,yellow,orange);}
+        .grad6{
+            background:radial-gradient(red 5%, yellow 21% orange 50%);/* 요소가 어떤 형태든 원형에서 찌그려져서 표현된다. */
+        }
+        .grad7{
+            width: 100px;
+            background:radial-gradient(circle, red 5%, yellow 21%, orange 50%);/* 요소가 정다각형일때만 정확히 원형 형태로 나오고 그 이외에는 잘려나온다.*/
+        }
+        #grad01{
+            width: 100px;
+            background:radial-gradient(closest-side at 35% 35%,red,yellow,orange);
+        }
+        #grad02{
+            width: 100px;
+            background:radial-gradient(farthest-side at 35% 35%,red,yellow,orange);
+        }
+        #grad03{
+            width: 100px;
+            background:radial-gradient(closest-corner at 35% 35%,red,yellow,orange);
+        }
+        #grad04{
+            width: 100px;
+            background:radial-gradient(farthest-corner at 35% 35%, red,yellow,orange);
+        }
+        #grad8{
+            background:repeating-radial-gradient(red,yellow 10%,orange 20%);
+        }
+        #grad9{
+            background:repeating-linear-gradient(135deg, red,yellow 5%,orange 10%);/* 남동 방향에서부터 퍼져나가는 모양새(135도) */
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h2>선형 gradient</h2>
+    <div class="grad1"></div>
+    <div class="grad2"></div>
+    <div class="grad3"></div>
+    <div class="grad4"></div>
+
+    <h2>원형 gradient</h2>
+    <div class="grad5"></div>
+    <div class="grad6"></div>
+    <div class="grad7"></div>
+
+    <h4>closed-side</h4>
+    <div id="grad01"></div>
+    <h4>farther-side</h4>
+    <div id="grad02"></div>
+    <h4>closest-corner</h4>
+    <div id="grad03"></div>
+    <h4>farthest-corner</h4>
+    <div id="grad04"></div>
+
+    <div id="grad8"></div>
+    <div id="grad9"></div>
+</body>
+</html>

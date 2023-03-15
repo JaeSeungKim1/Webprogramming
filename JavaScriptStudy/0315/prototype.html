@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+<body>
+    <script>
+        function Dog(name,color,age,gender){
+            this.name=name;
+            this.color=color;
+            this.age=age;
+            this.gender=gender;
+        }
+        console.log(Dog,Dog.prototype);
+        Dog.prototype.family='시추';
+        Dog.prototype.name2='시추';
+        Dog.prototype.breed=function(){
+            return this.name+" "+this.age+" "+this.family;
+        };
+        console.log(Dog,Dog.prototype);
+        /* 필드 메소드 하나씩 추가된 것들 확인 */
+        let pet= new Dog("댕댕이","검은색",2,"수컷");
+        let pet2=new Dog("흰둥이","하얀색",2,"몰루","몰루","몰루","몰루","몰루","몰루","몰루","몰루","몰루");
+        console.log(pet2);
+        /* 기존 생성자의 매개변수 개수 이하의 값을 집어 넣으면 순서대로 알아서 기입되고 입력안된 값들은 undefined 자료형으로 초기화된다. */
+
+        document.write(pet2.breed());
+        let obj={a:1,b:2,c:3};/* 객체는 배열처럼 나열 못함 */
+        document.write("<br>");
+        document.write("<br>");document.write("<br>")
+        document.write("<br>")
+        let arr=[1,2,3];
+
+
+        function ProperTI(name, id) {
+        this.name = name;
+        this.id = id;
+        }
+        let test = new ProperTI('test', 1234)
+
+        test.prototype.name2 = 'tttt'
+        test.prototype.fun = function() {
+        console.log(this.name + "!!!!!!!!!!!!!!!" + this.id)
+        }
+        test.fun();
+
+    </script>
+</body>
+</html>

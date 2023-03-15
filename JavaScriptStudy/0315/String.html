@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 객체함수</title>
+</head>
+<body>
+    <script>
+        let strObj = new String('sun');
+        console.log(strObj);
+        strObj = new String(1);
+        console.log(strObj);
+        strObj = new String(undefined);
+        console.log(strObj);
+
+
+        let type = String('sum');
+        console.log(typeof type,type);
+
+
+        let str = 'star';
+        let strObj1 = new String('star');
+        console.log(str==strObj1,str===strObj1);
+        console.log(strObj1.length);
+
+
+        let str1 = 'Hello';
+        let str2 = '안녕하세요';
+
+
+        console.log(str1.charAt(0));
+        console.log(str1.charAt(1));
+        console.log(str1.charAt(2));
+        console.log(str1.charAt(3));
+        console.log(str1.charAt(4));
+        console.log(str1.charAt(5));//범위 밖의 내용은 빈내용 반환
+
+
+        for(let i=0;i<str1.length;i++){
+            console.log(str1.charAt(i));
+            console.log(str1[i]);
+        }
+        console.log('hello'.concat('world!!'));
+        str1 = "hello world.";
+        console.log(str1.indexOf('l'));
+        console.log(str1.indexOf('or'));
+        console.log(str1.indexOf('or',9));
+
+
+        if(str1.includes('hello')){
+            console.log('네.');
+        }
+        if(str1.indexOf('hello')!== -1){
+            console.log('네.');
+        }
+
+
+        console.log(str1.lastIndexOf('world'));
+        console.log(str1.lastIndexOf('l'));
+        console.log(str1.lastIndexOf('o',5));
+        console.log(str1.lastIndexOf('W'));
+        console.log(str1.lastIndexOf('w',5));
+
+
+        //문자열 내용 대체 새로운 문자열 반환
+        console.log(str1.replace('world','family'),str1);
+        console.log(str1.replace('world','<em>$&</em>'));
+        console.log(str1.replace(/hello/gi,'hi'));/* 모든 문자검색이며 대소문자 구분안함 >> gi global ignoreCase */
+        console.log(str1.toUpperCase());
+        console.log(str1.toLowerCase());
+        str1='Hello_World!';
+        console.log(str1);
+        console.log(str1.slice(2,6));
+        console.log(str1.slice(-4,-2));
+        console.log(str1.slice(2));
+        console.log("");
+        console.log("");
+        console.log("");
+        console.log("");
+        console.log("");
+
+        
+        console.log(str1.substring(2,6));/* 2인덱스 시작 6끝 인덱스 */
+        console.log(str1.substr(2,6));/* 2인덱스 시작점 6개수 */
+        let str3 = 'html/ css/java!,java script';
+        console.log(str3.split(''));
+        console.log(str3.split(' '));
+        console.log(str3.split('/'));
+        console.log(str3.split('!'));
+        let str4 = '    hohoho    ';
+        console.log(str3.trim(),str4.trim());//문자열 앞 뒤 공백 제거
+        let str5 = 'The rain in Spain stays mainly in the plain.';
+        console.log(str5.match('ain'));
+        console.log(str5.match(/ain/g));/* 모든 문자검색이며 대소문자 구분함 >> g(regex)  global*/
+        console.log(str5.search('ain'));
+    </script>
+</body>
+</html>
+
+
+
+

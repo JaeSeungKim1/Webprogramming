@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher Order Function</title>
+</head>
+<body>
+    <script>
+
+        const fruits=['orange','apple','banana','grape'];
+        fruits.sort().forEach(e=> document.write(e+"<br>"));/* sort메소드는 정렬한 배열 리턴  또한 원본 배열도 정렬됨.*/
+        document.write("<br>");
+        fruits.reverse().forEach(e=> document.write(e+"<br>"));/* reverse도 sort와 같이 역순으로 정렬한 배열리턴하며 원본 배열도 정렬된다. */
+
+        const points= Array(11)/* .filter(s=> s>0).map(e=> e*10) */;
+
+        points.forEach(e=> document.write(typeof e+"<br>"));/* map도 리턴 값이 원소  consumen 함수를 풀어 쓰거나 생략 가능*/
+        const numbers=[1,2,3,4];
+        let pows =numbers.map(e=> e**2/* Math.pow(e,2)  e*e 해도 무방*/);/* 함수형 인터페이스 Function을 인자로 받음 */
+        pows.forEach(e=>document.write(e+"<br>"));/* Consumer를 인자로 받는 메소드 forEach */
+        pows.map(e=> Math.sqrt(e)).forEach(p=> document.write(p+"&nbsp"));/* 제곱한 걸 다시 제곱근을 구하면 처음 원본 숫자가 나오게 된다(양수 한정!)*/
+        let filterRes = [1,2,3,4,5,6,7,8,9,10];
+        filterRes.filter(e=> e%2!=0).forEach(e=>document.write(e+"<br>"));
+        document.write(filterRes.reduce((x,y)=> x+y));
+        filterRes.some(x=> x>9)/* 일부라도  some >> anyMatch every >> allMatch*/
+        document.write("<br>");
+        let users=[
+            {name:'lee',gender:'male'},
+            {name:'koo',gender:'male'},
+            {name:'choi',gender:'female'},
+        ];
+        document.write(users.findIndex(e=> e['name']==='koo')+"<br>")
+
+    </script>
+</body>
+</html>

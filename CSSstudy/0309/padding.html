@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{background-color: skyblue;
+            border: 2px solid teal;
+            background-clip: content-box;
+            width: 300px;
+        }
+        div.pad{
+            padding-top: 10px;
+            padding-right: 20px;
+            padding-bottom: 30px;
+            padding-left: 40px;
+        }
+        div.four{padding:10px 20px 30px 40px;}/*시계방향 설정 top right bottom left */
+        div.three{padding: 10px 20px 30px;}/* top,(left,right),bottom 수치 설정법 */
+        div.two{padding: 10px 20px;}/* 두개만 적으면 가로 방향 설정, 세로방향 설정 */
+        div.one{padding: 10px;}/* 네 방향 모두 설정 인자 1값 */
+    </style>
+</head>
+<body>
+    <h3>패딩 영역 설정</h3>
+    <div>패딩 미설정</div>
+    <div class="pad">네 방향 별개 설정</div><br>
+    <div class="four">패딩 속성 값 4개</div><br>
+    <div class="three">패딩 속성 값 3개</div><br>
+    <div class="two">패딩 속성 값 2개</div><br>
+    <div class="one">패딩 속성 값 1개</div><br>
+    </body>
+</html>

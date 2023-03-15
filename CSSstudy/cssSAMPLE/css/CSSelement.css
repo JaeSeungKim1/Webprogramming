@@ -1,0 +1,66 @@
+#Descendant{display:inline-block; background-color: lightgoldenrodyellow; width: auto; height: auto;vertical-align: top;}
+#Descendant>ul li{color: red;}
+#Descendant>ul li *{color: black;}
+#child{display:inline-block; background-color: lightgoldenrodyellow; width: auto; height: auto;vertical-align: top;}
+#child>ul>li{color: red;}
+#child>ul>li *{color: black;}
+#NomelSibling{display:inline-block; background-color: lightgoldenrodyellow; width: auto; height: auto;vertical-align: top;}
+#NomelSibling>ul>ol~li{color: red;}
+#Sibling{display:inline-block; background-color: lightgoldenrodyellow; width: auto; height: auto;vertical-align: top;}
+#Sibling>ul>ol+li{color: red;}
+
+
+/* CSS 의사요소 정리 */
+#OpinionCSS{display: inline-block; background-color: lightblue;width: 400px; vertical-align: top;}
+/*요소의 첫글자 선택*/
+#OpinionCSS p::first-letter{font-size: 3em;}
+/*요소의 첫줄 선택*/
+#OpinionCSS p::first-line{color:red;}
+/*요소의 앞공간 선택*/
+#OpinionCSS h1::before{
+    content:"::before로 내용추가";
+    color:blue;
+}
+#OpinionCSS h1::after{
+    content:"::after로 내용 추가"url("../0307/image/cat.png");
+    color:red; background-color: green;
+}
+/* 드래그했을대 */
+#OpinionCSS ::selection{
+    color:red;
+    background-color: yellow;
+}
+
+
+
+
+#child2{display:inline-block; background-color: lightgoldenrodyellow; width: auto; height: auto;}
+#child2>ul>li{color: red; border: 1px solid black}
+
+#Descendant2{display:inline-block; background-color: lightgoldenrodyellow; width: auto; height: auto;}
+#Descendant2>ul li{color: red; border: 1px solid black}
+
+
+
+
+#stateSelect{display: inline-block; width: 350px; height: auto; background-color: rgb(173, 216, 230,0.5); }
+        #stateSelect a:link{color: orange;}
+        #stateSelect a:visited{color:gray;}
+        #stateSelect a:hover{color:blue;font-weight: bold;}
+        #stateSelect a:active{color:red;}
+        #stateSelect div{background-color:pink;width: 300px;padding: 20px;
+            text-align:center;}
+        #stateSelect #stateSelect #hover:hover{background-color:blue;color:white;}
+        #stateSelect #focus input{
+            border:3px solid black;
+            width:300px;padding:10px;outline:none;
+            transition:0.5s;
+        }
+        #stateSelect #focus input:focus{border:4px solid orange;}
+        #stateSelect form[name="checked"] input{color:wheat;}
+        #stateSelect form[name="checked"] span{color:wheat;}
+        #stateSelect form[name="checked"] input+span{color:blue;}
+        #stateSelect form[name="checked"] input:enabled+span{color:green;}
+        #stateSelect form[name="checked"] input:disabled+span{color:orange;}
+        #stateSelect form[name="checked"] input:checked+span{visibility: hidden; color:red;}
+        #stateSelect form[name="checked"] input:checked+span::before{visibility: visible; content: 'input:checked+span 로 속성변경';}

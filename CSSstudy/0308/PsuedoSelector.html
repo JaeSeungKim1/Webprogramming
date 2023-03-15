@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:link{background-color:aqua; color:orange;}
+        a:disabled{background-color:black; color:yellow; font-size: 13px; text-align:right;}
+        a:visited{color:blue; font-weight:bold;}
+        a:hover{color:red;}/*하이퍼 링크의 상태에 따른 색 변화 기능*/
+        div{background-color:pink; width:300px; padding: 20px; text-align:center;}
+        div:hover{background-color:blue; color:white;}
+        #focus input{
+            border: 3px solid black;
+            width:300px;padding:10px;outline:none;
+            transition:0.5s;
+        }
+        #focus input:focus{border: 4px solid orange;}
+        form[name="checked"] input{color:wheat;}
+        form[name="checked"] span{color:wheat;}
+        form[name="checked"] input:enabled+span{color:aquamarine;}
+        form[name="checked"] input:disabled+span{color:yellow;}
+        form[name="checked"] input:checked+span{color:red;}/* input의 상태에 따라 span 색만 바뀌는 코드 */
+        /* input만 바뀌게 하고 싶으면 상태까지만 */
+    </style>
+</head>
+<body>
+    <h3>링크 선택자를 이용한 선택</h3>
+    <p><a href="#">이동</a></p>
+    <div>링크 선택자를 이용한 버튼</div>
+    <br>
+    <h3>input 요소 선택</h3>
+    <form id="focus" action="#">
+        아래 입력 양식 클릭<br>
+        <input type="text" value="선택">
+    </form>
+    <br>
+    <form name="checked" action="#">
+        <input type="radio" value="html" name="lecture" checked>
+        <span>HTML</span>
+        <br>
+        <input type="radio" value="css" name="lecture">
+        <span>CSS</span>
+        <input type="radio" value="java" name="lecture" disabled>
+        <span>Java</span>
+        <hr>
+        <input type="checkbox" value="html" name="lecture" checked>
+        <span>Html</span>
+        <input type="checkbox" value="css" name="lecture">
+        <span>CSS</span>
+        <input type="checkbox" value="java" name="lecture" disabled>
+        <span>Java</span>
+</body>
+</html>

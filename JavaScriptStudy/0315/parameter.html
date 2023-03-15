@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parameter</title>
+</head>
+<body>
+    <script>
+        function sum(x,y){
+            return x+y;
+        };
+        document.write(sum(3,4));
+        document.write(sum(1));/* 인자가 하나라도 빠지면.. undefined 형태라 int + undefined >> NaN으로 출력  */
+        function restParameter(p1,p2,...rest){
+            console.log(arguments);
+            console.log(rest);
+            console.log(Array.isArray(rest));
+        }
+        restParameter(1,2,3,4,5,6,7,8,9,10,11);
+        console.log([...'hello']);//spread 연산자 ...
+        const nums = [1,2,3,4,5]; //쪼개주는 역할
+        console.log(...nums);
+        restParameter(...nums);
+    </script>
+</body>
+</html>

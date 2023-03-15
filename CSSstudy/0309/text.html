@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text.html</title>
+    <style>
+       textcolor{color:darkblue;}
+       .rightToLeft{direction:rtl;}
+        .decWordSpacing{letter-spacing: -3px;}
+        .incLetterSpacing{letter-spacing:10px;}
+        .decWordSpacing{word-spacing:-3px;}
+        .incWordSpacing{word-spacing: 10px;}/*스페이스 효과를 증가 시켜주는 효과*/  
+        .indent{text-indent: 30px;}
+        .left{text-align:left;}
+        .right{text-align:right;}
+        .center{text-align:center;}
+        .overline{
+            text-decoration-style:solid ;
+            text-decoration-line: overline;
+            text-decoration-color: blue;
+        }
+        .lineThrough{text-decoration: line-through yellow;}
+        .underline{text-decoration: underline;}
+        a{text-decoration: none;}
+        .upperCase{text-transform: uppercase;}
+        .lowerCase{text-transform: lowercase;}
+        .capitalize{text-transform: capitalize;}
+        #narrowLineheight{line-height:0.8;}
+        #wideLineheight{line-height:1.8;}
+        #shadow01{text-shadow: 4px 2px;}
+        #shadow02{text-shadow: 4px 2px gray;}
+        #shadow03{text-shadow: 4px 2px 5px;}
+        #shadow04{text-shadow: 0 0 4px red;}
+        #shadow05{ 
+                color: white;
+                text-shadow: 1px 1px 2px black,
+                            0 0 20px purple,
+                            0 0 5px maroon;
+            ;}
+            p.a{white-space: nowrap; background-color:gray;}
+            p.b{white-space: normal; background-color:gray;}
+            p.c{white-space: pre;background-color:gray;}
+    </style>
+</head>
+<body>
+    <h1>CSS를 이용한 텍스트 설정</h1>
+    <textcolor>글자의 색</textcolor>
+    <p class="rightToLeft">!@#$#$%+_</p>
+    <p class="decLetterSpacing">글자간격 작게</p>
+    <p>기본 글자간격</p>
+    <p class="incLetterSpacing">글자간격 크게</p>
+    <p class="decWordSpacing">단어간격 작게</p>
+    <p class="incWordSpacing">단어간격 크게</p>
+    <p class="indent">들여쓰기 설정은 긴 문장을 필요로 하므로 좀 길게 쓰겠습니다.
+        화면내에서 아래로 내려올 정도로 길게 써야 합니다.</p>
+    <p class="left">텍스트 왼쪽 정렬</p>
+    <p class="right">텍스트 오른쪽 정렬</p>
+    <p class="center">텍스트 중앙 정렬</p>
+    <p class="overline">텍스트 윗줄</p>
+    <p class="lineThrough">텍스트 중간줄</p>
+    <p class="underline">텍스트 아래줄</p>
+    <a href="#">링크의 밑줄 제거</a>
+    <p class="upperCase">영문자의 대문자orange</p>
+    <p class="lowerCase">영문자의 소문자ORANGE</p>
+    <p class="capitalize">영문자의 첫자만 대문자 aPPle pIE</p>
+    <p id="narrowLineheight">
+        줄간격 조절 작게<br>줄간격 조절 작게<br>줄간격 조절 작게<br>줄간격 조절 작게<br>
+    </p>
+    <p id="wideLineheight">
+        줄간격 조절 크게<br>줄간격 조절 크게<br>줄간격 조절 크게<br>줄간격 조절 크게<br>
+    </p>
+    <h3 id="shadow01">그림자 효과</h3>
+    <h3 id="shadow02">그림자 효과</h3>
+    <h3 id="shadow03">그림자 효과</h3>
+    <h3 id="shadow04">그림자 효과</h3>
+    <h3 id="shadow05">그림자 효과</h3>
+    <p class="a">
+        너네 자랑하고 싶은 거 있으면 얼마든지 해
+        난 괜찮어 왜냐면 나는 부럽지가 않어
+        한 개도 부럽지가 않어 어?
+        니가 가진 게 많겠니
+        내가 가진 게 많겠니    
+    </p>
+    <p class="b">
+        너네 자랑하고 싶은 거 있으면 얼마든지 해
+        난 괜찮어 왜냐면 나는 부럽지가 않어
+        한 개도 부럽지가 않어 어?
+        니가 가진 게 많겠니
+        내가 가진 게 많겠니    
+    </p>
+    <p class="c">
+        너네 자랑하고 싶은 거 있으면 얼마든지 해
+        난 괜찮어 왜냐면 나는 부럽지가 않어
+        한 개도 부럽지가 않어 어?
+        니가 가진 게 많겠니
+        내가 가진 게 많겠니    
+    </p>
+</body>
+</html>

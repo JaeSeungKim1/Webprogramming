@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <script>
+        let person={
+            name: "홍길동",
+            birthday: "20220308",
+            pId: "12123568",
+            fullId:function(){
+                return this.birthday.slice(2)+"-"+this.pId;
+            }        
+        }
+        console.log(person.name);
+        console.log(person['name']);
+        console.log(person.fullId);
+        console.log(person.fullId());
+        let person2=new Object();
+        console.log(person2);
+        person2.name='임꺽정';
+        person2.gender="남자";
+        person2.intro=function(){
+            console.log('나는 '+this.name+'.나는 '+this.gender);
+        };    
+        function Person(name,gender){
+            this.name=name;
+            this.gender=gender;
+            this.intro=function(){
+                console.log('나는 '+this.name+'.나는 '+this.gender);
+            }
+        }
+        let person3= new Person('김혜수','여자');
+        document.write(person3.name);
+    </script>
+</body>
+</html>

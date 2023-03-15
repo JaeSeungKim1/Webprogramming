@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test Grid</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        body {
+            background-color: #eee;
+            color: #434344;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+        }
+        /* Page Layout */
+        .container{
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 60px;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            grid-template-areas: 
+                "header header"
+                "sidebar main"
+                "footer footer";
+            grid-gap: 50px;
+            background-color: #fff;
+        }
+        /* Header */
+        header{
+            grid-area: header;
+            color: #9f9c9c;
+            text-transform: uppercase;
+            border-bottom: 2px solid #b0e0ea;
+            padding: 20px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        
+        }
+        header nav {
+            justify-self: start;
+            list-style-type: none;
+        }
+        header nav li {
+            margin-right: 15px;
+            display: inline-block;
+        }
+        header button {
+            justify-self: end;
+            border: none;
+            padding: 8px 25px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 1.25rem;
+            background-color: #51bb7b;
+        }
+        /* Main Section */
+        .main {
+            grid-area: main;
+        }
+        .main h2 {
+            font-size: 32px;
+            margin: 1rem 0;
+            color: #50c6db;
+        }
+        .main p {
+            font-size: 1rem;
+            margin-bottom: .75rem;
+        }
+        .main img {
+            width: 100%;
+        }
+        /* Sidebar */
+        .sidebar {
+            grid-area: sidebar;
+            padding: 20px;
+            border-top: 3px solid #693f7e;
+            background-color: #f9f9f9;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            margin-top: 1rem;
+            font-size: .75rem;
+        }
+        .sidebar ul > li {
+            padding: .25rem 0;
+        }
+        .logo {
+            font-size: 2rem;
+            margin-right: 1.5rem;
+            color: #50c6db;
+        }
+        /* Footer */
+        footer {
+            grid-area: footer;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            background-color: #9f9c9c;
+        }
+        footer p {
+            color: #434344;
+            font-size: 12px;
+            padding: 10px;
+        }
+        @media (max-width: 600px) {
+            .container{
+                /*  Redefine the grid into a single column layout. */
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                    "header"
+                    "main"
+                    "sidebar"
+                    "footer";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+              <ul>
+                <li class="logo">
+                    <a href="#">
+                        <img src="../0309/images/kkoimage.png">
+                    </a>
+                </li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </nav>
+            <button>Login</button>
+        </header>
+        <aside class="sidebar">
+            <h3>Recent Posts</h3>
+            <ul>
+                <li><a href="#">Post One</a></li>
+                <li><a href="#">Post Two</a></li>
+                <li><a href="#">Post Three</a></li>
+                <li><a href="#">Post Four</a></li>
+                <li><a href="#">Post Five</a></li>
+            </ul>
+        </aside>
+        <section class="main">
+            <img src="../0309/images/backgroundimage.JPG">        
+            <h2>CSS Grid Layout</h2>
+            <p>To begin working with a CSS Grid Layout, it is very important to have display: grid; set on the container. The grid-template-columns are declared here to give the overall structure of the page. Remember how the Flexbox example had the .main class set to a flex-grow of 3 and the sidebar had a flex-grow of 1 to establish sizing? Well, here the grid-template-columns have been set as 1fr and 3fr.</p>
+            <p> This is where the grid is taking shape with the fractional units. With these values, it is apparent that there are two columns and they are not equal with. The column set to 3fr is three times wider than the other. This explains how the sidebar appears more narrow than the content area.</p>
+        </section>
+        <footer>
+            <h3>CSS Grid Layout Example</h3>
+            <p>Hope you enjoyed learning about CSS Grid Layouts!</p>
+        </footer>
+    </div>
+</body>
+</html>

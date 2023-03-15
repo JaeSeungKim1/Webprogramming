@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math 객체함수</title>
+</head>
+<body>
+    <script>
+        console.log(Math.min());
+        console.log(Math.max());
+        console.log(Math.min(1,10,6,-102,-50,1000,0));
+        console.log(Math.min(1,'10',6,-100,0));
+        console.log(Math.min(1,10,'string',-100,33,0));
+        console.log(Math.max(1,10,6,-102,-50,1000,0));
+        console.log(Math.max(1,'10',6,-100,0));
+        console.log(Math.max(1,10,'string',-100,33,0));/* 수로 비교 불가능한 문자열이 원소에 있다면 NaN 아스키코드로 변환 불가 */
+        let min=10, max=20;
+        console.log(Math.random());
+        console.log(Math.random()*(max-min)+min);
+        console.log(Math.round(10.49));
+        console.log(Math.round(10.5));
+        console.log(Math.round(-10.5));
+        console.log(Math.round(-10.51));/* 반올림 */
+        console.log(Math.floor(9.95));
+        console.log(Math.floor(10.01));
+        console.log(Math.floor(-9.98));
+        console.log(Math.floor(-10.01));/* 내림 */
+        console.log(Math.ceil(9.01));
+        console.log(Math.ceil(9.95));/* 올림 */
+        console.log(Math.ceil(-9.95));
+        console.log(Math.ceil(-9.01));
+        console.log(Math.abs(-11));/* 수의 절댓값(무조건 양수) */
+        console.log(Math.cbrt(8));/* 수의 세제곱근*/
+        console.log(Math.sqrt(9));/* 수의 제곱근 */
+    </script>
+</body>
+</html>
+
+
+
+

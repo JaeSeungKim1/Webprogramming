@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .resize{
+            border: solid 3px orange; margin:10px;
+            padding: 20px;width:300px; overflow: auto;
+            outline: 1px solid red; outline-offset: 20px;
+        }/* text-overflow(텍스트 범람 시 사용하는 속성) vs overflow(viewport에 scroll 생김 유무 속성) 혼동 x */
+        #width{resize: horizontal;}
+        #height{resize: vertical;}
+        #both{resize: both;}
+        .box{width: 350px; height: 100px; margin: 10px;}/* 기본으로 설정하면 block 요소의 속성이 content 기준으로 설정된다. */
+        #origin{border: 1px solid orange;}
+        #padding{border: 10px solid green;padding: 20px;}
+        #boxsizing{
+            border: 10px solid green;padding: 20px;
+            box-sizing:border-box;}/* 속성을 설정하는 범위를 content가 아닌 border까지 잡겠다는 의미(content에서 border까지 범위 확장)*/
+    </style>
+</head>
+<body>
+    <div id="width" class="resize">너비조절</div>
+    <div id="height" class="resize">높이조절</div>
+    <div id="both" class="resize">모두조절</div>
+    <div id="origin" class="box">기본</div>
+    <div id="padding" class="box">패딩 값을 통한 크기 조절</div>
+    <div id="boxsizing" class="box">박스사이즈를 통한 크기조절</div>
+</body>
+</html>

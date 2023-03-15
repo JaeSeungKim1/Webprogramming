@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #p01,#p02{
+            border: 1px solid black;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        #p03,#p04,#p05,#p06,#p07,#p08{
+            border: 1px solid black;
+            width: 130px;
+        }
+        #p01{text-overflow: clip;}
+        #p02{text-overflow: ellipsis;}
+        #p01:hover,#p02:hover{overflow: visible;}
+        #p03,#p05{word-wrap: break-word;}
+        #ex1{text-emphasis: filled;}
+        #ex2{text-emphasis: open;}/* 강조 */
+        #ex3{text-emphasis: double-circle;}
+        #ex4{text-emphasis-style: triangle; text-emphasis-color: blue;}
+        #p06{word-wrap: break-word;}
+        #p07{word-break: break-all;}
+        #p08{word-break: keep-all;}
+    </style>
+</head>
+<body>
+    <h3>텍스트</h3>    
+    1<p id="p01">contents영역을 벗어난 텍스트 부분을 잘라냅니다.</p>
+    2<p id="p02">contents영역을 벗어난 텍스트 부분을 생략기호로 표시합니다.</p>
+    3<p id="p03">contents영역을 벗어난
+        <span id="ex1">기나긴기나긴기나긴기나긴단어</span>가 표시됩니다.</p>
+    4<p id="p04">contents영역을 벗어난
+        <span id="ex2">기나긴기나긴기나긴기나긴단어</span>
+        wordwordwordwordword가 표시됩니다.</p>
+    5<p id="p05">contents영역을 벗어난
+        <span id="ex3">기나긴기나긴기나긴기나긴단어</span>
+        wordwordwordwordword가 표시됩니다.</p>
+    6<p id="p06">contents영역을 벗어난
+        <span id="ex4">기나긴기나긴기나긴기나긴단어</span>
+        wordwordwordwordword가 표시됩니다.</p>
+    7<p id="p07">contents영역을 벗어난
+        <span id="ex5">기나긴기나긴기나긴기나긴단어</span>
+        wordwordwordwordword가 표시됩니다.</p>
+    8<p id="p08">contents영역을 벗어난 word-word-word-word-word가 표시됩니다.</p>문어
+</body>
+</html>

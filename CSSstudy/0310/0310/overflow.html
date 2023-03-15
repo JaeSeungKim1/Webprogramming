@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS overflow</title>
+    <style>
+        div{border:1px solid green;width: 200px;height: 200px;
+            display: inline-block;}
+        div.container1{
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+        div.container2{
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+        div.container3{
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <p>CSS overflow 속성은 요소내의 컨텐츠가 영역보다 많을 때
+            보여지는 속성입니다.
+            널 우연히 마주친 척할래 못 본 척 지나갈래
+            You're so fine, gotta, gotta get to know ya
+            나와, 나와 걸어가 줘
+            지금 돌아서면 I need ya, need ya, need ya to look at me back
+            Hey, 다 들켰었나 널 보면 하트가 튀어나와
+        </p>
+    </div>
+    <div class="container2">
+        <p>CSS overflow 속성은 요소내의 컨텐츠가 영역보다 많을 때
+            보여지는 속성입니다.
+            널 우연히 마주친 척할래 못 본 척 지나갈래
+            You're so fine, gotta, gotta get to know ya
+            나와, 나와 걸어가 줘
+            지금 돌아서면 I need ya, need ya, need ya to look at me back
+            Hey, 다 들켰었나 널 보면 하트가 튀어나와
+        </p>
+    </div>
+    <div class="container3">
+        <img src="../0309/images/backgroundimage.JPG">
+    </div>
+</body>
+</html>

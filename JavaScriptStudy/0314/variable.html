@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function hello(){
+            console.log(1,world);
+            world="hello world";
+            console.log(2,world);
+            var world;
+            console.log(1,world);
+            function world(){
+                console.log("hello world!");
+            }
+            console.log(4,world)/* 우선순위 함수 > 변수 */
+        }
+        hello()
+        foo=123;
+        var foo;
+        
+        function test(){
+            xoo=1000;
+            console.log('xoo',xoo);
+            var xoo;
+            console.log('xoo',xoo);
+        }
+        test();
+        console.log('foo',foo,'xoo',xoo);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+
+#textSetting{display:inline-block; background-color: rgb(250, 250, 210,0.7); width: 600px; height: auto;vertical-align: top;}
+#textSetting textcolor{color:darkorange;}
+#textSetting .rightToLeft{direction:rtl;}
+#textSetting .decLetterSpacing{letter-spacing: -6px;}
+#textSetting .incLetterSpacing{letter-spacing: 12px;}
+#textSetting .decWordSpacing{word-spacing: -10px;}
+#textSetting .incWordSpacing{word-spacing: 15px;}
+#textSetting .indent{text-indent: 30px;}
+#textSetting .left{text-align: left;}
+#textSetting .right{text-align: right;}
+#textSetting .center{text-align: center;}
+#textSetting .overline{
+    text-decoration-style: solid;
+    text-decoration-line: overline;
+    text-decoration-color: blue;
+}
+#textSetting .lineThrough{text-decoration: line-through red solid;}
+#textSetting .underline{text-decoration: underline blue wavy;}
+#textSetting #allLine{text-decoration: underline overline line-through maroon;}
+#textSetting a{text-decoration: none;}
+#textSetting .upperCase{text-transform: uppercase;}
+#textSetting .lowerCase{text-transform: lowercase;}
+#textSetting .capitalize{text-transform: capitalize;}
+#textSetting #narrowLineheight{border:1px solid black; line-height: 0.8;}
+#textSetting #wideLineheight{border:1px solid black; line-height: 1.8;}
+#textSetting #shadow01{text-shadow: 4px 2px;}
+#textSetting #shadow02{text-shadow: 4px 2px gray;}
+#textSetting #shadow03{text-shadow: 4px 2px 5px;}
+#textSetting #shadow04{text-shadow: 0 0 4px red;}
+#textSetting #shadow05{
+    color:white;
+    text-shadow: 1px 1px 2px black,
+                0 0 20px purple,
+                0 0 5px maroon;
+}
+#textSetting p.a{white-space: nowrap;background-color: lightgray;}
+#textSetting p.b{white-space: normal;background-color: lightgray;}
+#textSetting p.c{white-space: pre;background-color: lightgray;}
+
+
+
+#textOverline{display:inline-block; background-color: rgb(250, 250, 210,0.7); width: auto; height: auto;vertical-align: top;}
+#textOverline>#p01,#p02{
+    border: 1px solid black;
+    white-space: nowrap;
+    width: 300px;
+    overflow: hidden;
+}
+#textOverline>#p03,#p04,#p05,#p06,#p07,#p08{
+    border:1px solid black;
+    width: 200px;
+}
+#textOverline>#p01{text-overflow: clip;}
+#textOverline>#p02{text-overflow: ellipsis;}
+#textOverline>#p01:hover,#p02:hover{overflow: visible;}
+
+#textOverline #p03,#p05{word-wrap: break-word;}
+#textOverline #p04{word-wrap: normal;}
+#textOverline #ex1{text-emphasis: filled;}
+#textOverline #ex2{text-emphasis: open;}
+#textOverline #ex3{text-emphasis: double-circle red;}
+#textOverline #ex4{text-emphasis-style: triangle ; 
+    text-emphasis-color: blue;}
+#textOverline>#p06{word-break: normal;}
+#textOverline>#p07{word-break: break-all;}
+#textOverline>#p08{word-break: keep-all;}
+
+
+
+#fontCASE{display:inline-block; background-color: lightgoldenrodyellow; width: 300px; height: auto;vertical-align: top;}
+#fontCASE .serif{font-family: 'Times New Roman', Times, serif;}
+#fontCASE .sanserif{font-family: Arial, Helvetica, sans-serif;}
+#fontCASE .smallCaps{font-variant: small-caps;}
+#fontCASE .bold{font-weight: bold;}
+#fontCASE .bolder{font-weight: 600;}
+#fontCASE .large{font-size: 1.8em;}
+#fontCASE .small{font-size: 0.7em;}
+#fontCASE .fixed{font-size: 20px;}
+@font-face {
+    font-family: 'temp';
+    src: url(font/NotoSansKR-Regular.otf) format('opentype'),
+        url(font/NotoSansKR-Bold.otf) format('opentype');
+}
+#fontCASE .file{font-family: 'temp';font-weight: bold;}
+#fontCASE .web{font-family: 'Nanum Brush Script';}
+
+

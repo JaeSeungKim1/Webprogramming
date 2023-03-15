@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position</title>
+    <style>
+        div.static{
+            position: static;
+            border: 2px orange;
+            background-color: lightblue;
+        }
+        div.relative{
+            border: 2px solid red;
+            width:500px; height: 200px;
+            position:relative;
+            right:50px;
+            top:10px;
+        }
+        div.absolute{
+        position: absolute;
+        border: 2px solid green;
+        width:200px;
+        bottom: 50px;
+        left: 0;
+        }
+        div.fixed{
+            position: fixed;
+            border: 2px solid yellow;
+            width: 450px;
+        }
+        div.sticky{/* 끈적한 의미 즉 스티커의 그 sticky */
+            position: sticky;
+            background: cyan;
+            opacity: 0.8;/* 투명도 설정 */
+            top:0px;
+        }
+        .first{
+            background-color: orange;
+            position:relative;
+            top:-30px;left:120px;
+        }
+        .last{
+            background-color: orange;
+            position:relative;
+            top:-30px;left:120px;z-index:-1;
+        }
+        .img{
+            position:absolute;
+            clip:rect(0px,1710px,958px,0px); /* 원본 크기의 이미지를 픽셀 단위로 자른 이미지 출력  
+            오버로딩x 인자 무조건 4개 단,(Top(시작)~Bottom(끝))  (Left(시작)~Right(끝)) 범위로 표현할 이미지 사이즈 지정*/
+        }
+    </style>
+</head>
+<body>
+    <h3>정적 위치 static position 지정 방식</h3>
+    <div class="static">정적 위치 방식 설정</div>
+    <div class="relative">상대 위치 방식 설정</div>
+    <div class="absolute">절대 위치 방식 설정</div>
+    <div class="fixed">고정 위치 방식 설정</div>
+    <div class="sticky"> sticky 방식의 위치 지정</div>
+    <p>z-index</p>
+    <div>
+        <div class="static Position">정적 위치 방식 설정</div>
+        <div class="first Position">상대 위치 방식 설정</div>
+    </div>
+    <br>
+    <div>
+        <div class="static Position">정적 위치 방식 설정</div>
+        <div class="last Position">상대 위치 방식 설정</div>
+    </div>
+    <img src="../0309/images/background.png" alt="이미지 읎음" class="img" >
+    </body>
+</html>

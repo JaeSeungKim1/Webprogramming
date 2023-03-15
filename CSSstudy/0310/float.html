@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS float</title>
+    <style>
+        img{margin-left:20px;/* border부터 outline 의 왼쪽 공백을 20px 만큼 주겠다는 의미 */
+            float: left;
+        }
+        .left{
+        background-color: orange;
+        width: 150px; height: 50px;
+        float: left;
+        }
+        .right{
+        background-color: violet;
+        width: 150px; height: 50px;
+        float: right;}
+        p#para{clear: both;/* 각자? */}
+        h2{text-align:center;}
+        header{border: 3px solid lightgreen;}
+        div.page{}
+    </style>
+</head>
+<body>
+    <h3>float속성을 이용한 위치 설정</h3>
+    <p>
+        <img src="../0309/images/background.png" alt="안 뜸"
+            width="250" height="180"><br>
+        상당히 긴 문장, 잘 떠오르지 않아서 쓰는 상당히 긴 문장, 막쓰는 상당히 긴 문장
+    </p>
+    <br><br><br><br><br><br><br>
+    <h3>clear 속성을 이용한 위치 설정</h3>
+    <div>
+        <div class="left">왼쪽으로 위치한 요소</div>
+        <div class="right">오른쪽으로 위치한 요소</div>
+    </div>
+    <p>하단의 문장 출력</p>
+    <p id="para">하단의 문장 출력2</p>
+    <p>하단의 문장 출력3</p>
+    <br><br>
+    <h1>float 속성을 통한 레이아웃(layout)</h1>
+    <div class="page">
+        <header>
+            <h2>header 영역</h2>
+        </header>
+        <nav>
+            <h2>nav영역</h2>
+            <a>다양한 링크</a>
+            <a>메뉴1</a>
+            <a>menu2</a>
+        </nav>
+        <section>
+            <h2>section area</h2>
+            <p>
+                여기는 컨텐츠의 내용이 들어가요<br>
+                상당히 긴 문장, 잘 떠오르지 않아서 쓰는 상당히 긴 문장, 막쓰는 상당히 긴 문장
+            </p>
+        </section>
+        <footer>
+            <h2>footer area</h2>
+        </footer>
+    </div>
+</body>
+</html>

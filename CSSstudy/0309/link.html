@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            background-color:aliceblue;
+            color:darkblue;
+            font-size: 1.4em;
+            font-weight:800;
+            text-decoration:none;
+        }
+        a:link{color:green;}
+        a:visited{color:red;}
+        a:hover{color:coral;}
+        a:active{color:blue;}
+        p a:link, p a:visited{
+            background-color:orange;
+            color:maroon;
+            font-size: 0.9em;
+        }
+        
+        a:link>p, a:visited>p{
+            background-color:beige;
+            color:darkmagenta;
+            font-size:1.5em;
+        }
+        a:active>p,a:hover>p{
+            background-color:pink;
+            color: darkgreen;
+            font-size: 2.0em;
+        }
+    </style>
+</head>
+<body>
+    <h3>링크의 스타일 설정</h3>
+    <a href="#" target="_blank">가자</a>
+    <p><a href="#" target="_blank"><div>집에</div>가자</a></p>
+    <a href="#" target="_blank"><p>밥먹으러 가자</p></a>
+</body>
+</html>

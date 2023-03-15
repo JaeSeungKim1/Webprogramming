@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/textElement.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="textSetting">
+        <h1>CSS를 이용한 텍스트 설정</h1>
+        <textcolor>글자의 색 color:orange;</textcolor>
+        <p class="rightToLeft">(!@#$#$%+_) 123 decoration:rtl 로 했음</p>
+        <p class="right">(!@#$#$%+_) 123 text-align: right 로 했음</p>
+        <p class="decLetterSpacing">글자간격 작게 letter-spacing: -6px;</p>
+        <p>기본 글자간격 letter-spacing: 0</p>
+        <p class="incLetterSpacing">글자간격 크게 letter-spacing: 12px;</p>
+        <p class="decWordSpacing">단어간격 작게</p>
+        <p class="incWordSpacing">단어간격 크게</p>
+        <p class="indent">text-indent:30px; 로 들여쓰기 설정했음 에레렐레레ㅔ레레 확인용 ㅔ렐레레레레ㅔ레ㅔ레레ㅔ레레 </p>
+        <p class="left">텍스트 왼쪽 정렬 text-align: left;</p>
+        <p class="right">텍스트 오른쪽 정렬 text-align: right;</p>
+        <p class="center">텍스트 중앙 정렬 text-align: center;</p>
+        <p class="overline">텍스트 윗줄 text-decoration-line: overline; </p>
+        <p class="lineThrough">텍스트 중간줄 text-decoration-line: line-through</p>
+        <p class="underline">텍스트 아래줄 text-decoration-line: underline blue wavy; </p>
+        <p id="allLine">텍스트 줄들 동시적용 text-decoration: underline overline line-through maroon;</p>
+        <a href="#">링크의 밑줄 제거 text-decoration: none;</a>
+        <p class="upperCase">영문자의 대문자orange text-transform: uppercase;</p>
+        <p class="lowerCase">영문자의 소문자ORANGE text-transform: lowerCase;</p>
+        <p class="capitalize">영문자의 첫자만 대문자 aPPle pIE text-transform: capitalize</p>
+        <p id="narrowLineheight">
+            line-height: 0.8; <br>줄간격 조절 작게<br>줄간격 조절 작게<br>줄간격 조절 작게<br>줄간격 조절 작게<br>
+        </p>
+        <p id="wideLineheight">
+            line-height: 1.8; <br>줄간격 조절 크게<br>줄간격 조절 크게<br>
+        </p>
+        <h3 id="shadow01">그림자 효과 text-shadow: 4px 2px;</h3>
+        <h3 id="shadow02">그림자 효과 text-shadow: 4px 2px gray;</h3>
+        <h3 id="shadow03">그림자 효과 text-shadow: 4px 2px 5px;</h3>
+        <h3 id="shadow04">그림자 효과 text-shadow: 0 0 4px red;</h3>
+        <h3 id="shadow05">그림자 효과 color:white; <br>
+            text-shadow: 1px 1px 2px black, <br>
+                        0 0 20px purple, <br>
+                        0 0 5px maroon;</h3>
+        <p class="a">
+            white-space: nowrap;
+            난 괜찮어 왜냐면 나는 부럽지가 않어
+            한 개도 부럽지가 않어 어?
+            니가 가진  
+        </p>
+        <p class="b">
+            white-space: normal;
+            난 괜찮어 왜냐면 나는 부럽지가 않어
+            한 개도 부럽지가 않어 어?
+            니가 가진 게 많겠니
+            내가 가진 게 많겠니     
+        </p>
+        <p class="c">
+            white-space:pre
+            난 괜찮어 왜냐면 나는 부럽지가 않어
+            한 개도 부럽지가 않어 어?
+            니가 가진 게 많겠니
+            내가 가진 게 많겠니     
+        </p>
+    </div>
+
+    <div id="textOverline">
+        <h3>텍스트가 content 범위 넘어갈때 처리 </h3>    
+        <p id="p01">text-overflow: clip; 영역을 벗어난 텍스트 부분을 잘라냅니다.</p>
+        <p id="p02">text-overflow: ellipsis; 영역을 벗어난 텍스트 부분을 생략기호로 표시합니다.</p>
+        <p id="p03">word-wrap: break-word; <br> 단어가 벗어났을때 처리
+            <span id="ex1">aaaaaWORD1aaaaaaaaaaaaaaaaaaaaaaaaa</span><br>
+            WORD1 WORD2 WORD3 WORD4 가 표시됩니다.</p>
+        <p id="p04">word-wrap: normal; <br> 단어가 벗어났을때 처리
+            <span id="ex2">aaaaaWORD1aaaaaaaaaaaaaaaaaaaaaaaaa</span><br>
+            WORD1 WORD2 WORD3 WORD4 가 표시됩니다.</p>
+        <p id="p06">word-break: normal; <br> 단어가 벗어났을때 처리
+            <span id="ex4">aaaaaWORD1aaaaaaaaaaaaaaaaaaaaaaaaa</span>
+            WORD1 WORD2 WORD3 WORD4 가 표시됩니다.</p>
+        <p id="p07">word-break: break-all; <br> 단어가 벗어났을때 처리
+            <span id="ex4">aaaaaWORD1aaaaaaaaaaaaaaaaaaaaaaaaa</span>
+            wordwordwordwordword가 표시됩니다.</p>
+        <p id="p08">word-break: keep-all; <br> 단어가 벗어났을때 처리
+            <span id="ex4"> aaaaaWORD1aaaaaaaaaaaaaaaaaaaaaaaaa</span>
+            WORD1 WORD2 WORD3 WORD4 가 표시됩니다.</p>
+    </div>
+
+
+    <div id="fontCASE">
+        <h3>font-family 속성 여러폰트 적용</h3>
+        <p class="serif">font-family: 'Times New Roman', Times, serif; 글꼴 가나다라AaBbCcDd</p>
+        <p class="sanserif">font-family: Arial, Helvetica, sans-serif; 글꼴 가나다라AaBbCcDd</p>
+        <p class="web">웹폰트 적용 링크 복붙 -> family=???+???+???-> font-family:'??? ??? ???'; 로 적용</p>
+        <p class="file">파일폰트 적용 <br>@font-face {
+            font-family: '폰트 명칭 지정';
+            src: url(폰트파일 위치) format('opentype');
+        }</p> <br>
+        
+        <h3>font 속성이용 폰트 설정</h3>
+        <p class="bold">font-weight: bold; 가나다라AaBbCcDd</p>
+        <p class="bolder">font-weight: 600; 가나다라AaBbCcDd</p>
+        <p class="large">font-size: 1.8em; 가나다라AaBbCcDd</p>
+        <p class="small">font-size: 0.7em; 가나다라AaBbCcDd</p>
+        <p class="fixed">font-size: 20px; 가나다라AaBbCcDd</p>
+<br>
+        <h3>smallCaps 스몰캡스 설정</h3>
+        <p class="smallCaps">font-variant: small-caps; ABCabc소문자를 작은 대문자로 만들어줌</p>
+    </div>
+    
+</body>
+</html>

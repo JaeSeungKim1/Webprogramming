@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table CSS</title>
+    <style>
+        table,th,td{border: 2px solid black;}
+        table{
+            border-collapse: collapse; 
+        }/* 2줄이었던 테이블 테두리를 한줄로 설정 collapse */
+        table{
+            border-collapse: separate; 
+            border-spacing: 10px 20px;
+            width: 500px;
+            table-layout: fixed;
+        }/* 2줄이었던 테이블 테두리를 다시 두줄로 설정 seperate // spacing  그 두줄 사이의 여백*/
+        th{
+            text-align: left;
+            vertical-align: top;
+            height: 50px;
+        }
+        td{
+            text-align: right;
+            vertical-align: bottom;
+        }
+        caption{caption-side: bottom;}
+        /* table:hover caption{caption-side:top;} */
+        tr:hover{background-color: red;}
+        table th:hover, table td:hover{
+            background-color:blue;
+            text-align:center;
+            font-size:2em;
+        }
+        
+    </style>
+</head>
+<body>
+    <h3>테이블 스타일 설정</h3>
+    <table>
+        <caption>선수표</caption>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>종목</th>
+                <th>특기</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>손흥민</td>
+                <td>축구</td>
+                <td>드리블슛드리블슛드리블슛드리블슛드리블슛드리블슛드리블슛드리블슛드리블슛드리블슛드리블슛드리블슛드리블슛드리블슛드리블슛드리블슛</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <td>전체 인원</td>
+            <td>1</td>
+            <td></td>
+        </tfoot>
+    </table>
+</body>
+</html>

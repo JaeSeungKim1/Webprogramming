@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS flexbox</title>
+    <style>
+        .flexbox{
+            background-color: dimgray;
+            width: 300px; height: 200px;border-radius: 15px;
+            margin: 10px;
+            /* flexbox 사용 선언 */
+            display: flex;/* none, block, inline, inline-block*/
+        }
+        .item{
+            background-color: darkgray;border-radius: 10px;
+            width: 90px; height: 50px; color: white;
+            font-size: 25px;text-align:center; line-height: 30px;
+        }
+        #dir-wrap{
+            flex-direction: row;
+            flex-wrap:wrap;/* bottom 시작으로 top으로 향함 줄바꿈도 이루어진다.*/
+            justify-content: space-evenly;
+        }
+        #flow{
+            flex-flow: column-reverse wrap;
+            justify-content: flex-end;
+
+        }
+        .f{
+            width:450px;height:190px; flex-flow: row wrap;
+        }
+        #center{
+            justify-content: center; /* 메인축 변경 가운데 나열 */
+            align-items: center;
+        }
+        #between{
+            justify-content:space-between;
+            align-items: flex-start;
+        }
+        #around{
+            justify-content:space-around;
+            align-items: flex-end;
+        }
+        #evenly{
+            justify-content:space-evenly;
+            align-content: stretch;
+        }
+        #strech{
+            align-items: stretch;
+        }
+        #align{
+            display:flex;height:4rem;/*96px*/
+            align-items:baseline;
+        }
+        #align div:first-child{font-size: 30px;}
+        #align div:nth-child(2){font-size: 15px;}
+        #align div:last-child{font-size: 50px;}
+        #align{font-size: 30px;}
+    </style>
+</head>
+<body>
+    <div id="dir-wrap" class="flexbox">
+        <div class="item">one</div>
+        <div class="item">two</div>
+        <div class="item">three</div>
+        <div class="item">four</div>
+        <div class="item">five</div>
+    </div>    
+    <div id="flow" class="flexbox">
+        <div class="item">one</div>
+        <div class="item">two</div>
+        <div class="item">three</div>
+        <div class="item">four</div>
+        <div class="item">five</div>
+    </div>    
+    <div id="center" class="flexbox f">
+        <div class="item">one</div>
+        <div class="item">two</div>
+        <div class="item">three</div>
+    </div>    
+    <div id="between" class="flexbox f">
+        <div class="item">one</div>
+        <div class="item">two</div>
+        <div class="item">three</div>
+    </div>
+    <div id="around" class="flexbox f">
+        <div class="item">one</div>
+        <div class="item">two</div>
+        <div class="item">three</div>
+    </div>
+    <div id="evenly" class="flexbox f">
+        <div class="item heiauto">one</div>
+        <div class="item heiauto">two</div>
+        <div class="item heiauto">three</div>
+        <div class="item heiauto">four</div>
+        <div class="item heiauto">filve</div>
+        <div class="item heiauto">six</div>
+    </div>    
+    <div id="stretch" class="flexbox f">
+        <div class="item heiauto">one</div>
+        <div class="item heiauto">two</div>
+        <div class="item heiauto">three</div>
+    </div>    
+    <div id="align" class="flexbox">
+        <div class="item fontsize">one</div>
+        <div class="item fontsize">two</div>
+        <div class="item fontsize">three</div>
+    </div>
+</body>
+</html>

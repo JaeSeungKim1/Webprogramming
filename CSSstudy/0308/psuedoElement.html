@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 요소</title>
+    <style>
+        p::first-letter{font-size:3em;}/*요소의 첫글자 선택자*/
+        p::first-line{color:red;}/* 요소의 첫 줄 선택자*/
+        h1::before{
+            content:"HTML!!";
+            color:blue;
+        }/*요소의 앞 공간 선택자*/
+    </style>
+</head>
+<body>
+    <h1>의사 요소</h1>
+    <p>
+        Baby, got me looking so crazy
+        빠져버리는 daydream
+        Got me feeling you
+        너도 말해줄래
+        누가 내게 뭐라든
+        남들과는 달라 넌
+        May be you could be the one
+    </p>
+    <div></div>
+</body>
+</html>

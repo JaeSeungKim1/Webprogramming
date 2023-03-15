@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            width: 100px;height: 100px; background-color:lightgray;
+            margin: 50px; perspective: 150px;
+        }
+        div{
+            width: 100px;height: 100px; background-color:orange;
+            /* transform: rotateX(50deg); */
+            transition: 0.5s;
+        }
+        section.box01{
+            transform: rotateX(50deg);
+            perspective:none;
+        }
+        section.box02{
+            transform: rotateX(50deg);
+            perspective:100px;
+        }
+        section.box03{
+            transform: rotateX(50deg);/* 요소 자체를 돌리는 메소드 x,y,z축으로 */
+            perspective:200px;/*시점 변경*/
+        }
+        section.box04:hover{
+            transform:rotateX(70deg);
+        }
+        section.box05:hover{
+            transform:rotateY(70deg);
+        }
+        section.box06:hover{
+            transform:rotateZ(70deg);
+        }
+        section.box07:hover{
+            transform:translateX(-50px);
+        }
+        section.box08:hover{
+            transform:translateY(-50px);
+        }
+        section.box09:hover{
+            transform:translateZ(-50px);
+        }
+        section.box10:hover{
+            transform:scaleX(1.5);
+        }
+        section.box11:hover{
+            transform:scaleY(0.5);
+        }
+        section.box12:hover{
+            transform:scaleZ(0.8);
+        }
+        section.box13:hover{
+            transform:rotateX(180deg);
+            transform-origin: center;
+        }
+        section.box14:hover{
+            transform:rotateY(180deg);
+            transform-origin: right center;
+        }
+        section.box15:hover{
+            transform:rotateZ(180deg);
+            transform-origin: center bottom;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h3>rotate</h3>
+    <section class="box01">
+        <div>none</div>
+    </section>
+    <section class="box02">
+        <div>100px</div>
+    </section>
+    <section class="box03">
+        <div>200px</div>
+    </section>
+    <section class="box04">
+        <div>x축 회전</div>
+    </section>
+    <section class="box05">
+        <div>y축 회전</div>
+    </section>
+    <section class="box06">
+        <div>z축 회전</div>
+    </section>
+    <section class="box07">
+        <div>x축 이동</div>
+    </section>
+    <section class="box08">
+        <div>y축 이동</div>
+    </section>
+    <section class="box09">
+        <div>z축 이동</div>
+    </section>
+    <section class="box10">
+        <div>x축 크기</div>
+    </section>
+    <section class="box11">
+        <div>y축 크기</div>
+    </section>
+    <section class="box12">
+        <div>z축 크기</div>
+    </section>
+    <section class="box13">
+        <div>가운데</div>
+    </section>
+    <section class="box14">
+        <div>상단</div>
+    </section>
+    <section class="box15">
+        <div>하단</div>
+    </section>
+
+</body>
+</html>

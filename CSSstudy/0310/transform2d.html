@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS transform 2d</title>
+    <style>
+        .element{
+            position:absolute;
+            left: 150px; top: 150px;
+            background-color: skyblue;
+            height: 100px;width: 100px;
+            padding: 1px;
+            margin-right: 5px; margin-left: 5px;
+            animation:scale 3s infinite;
+            animation-direction: alternate;
+        }
+        @keyframes scale{
+            0%{transform:scale(1);}
+            50%{transform:scale(0.5);}
+            100%{transform:scale(2);}
+        }/* psuedo class 와 같이 쓰면 동적 페이지 만들 수 있을 듯? */
+    </style>
+</head>
+<body>
+    <div class="element"></div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <style>
+        
+       ul{
+            background-color: lightgray;
+            list-style-type: none;
+            margin:0;
+            padding:0;
+            height:40px;
+            overflow: hidden;
+        }
+        li{
+            border:1px solid white;
+            float: left;
+        }
+        li a{
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background-color: antiquewhite;
+            color:black;
+            font-weight: bold;
+             padding:8px; 
+        }
+        .login{
+            float:right;
+        }
+        .current{
+            background-color: orange;
+        }
+        a:hover:not(.login){
+            background-color: cyan;
+            color:white;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div>
+        <h1>네비게이션 바</h1>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#" class="current">CSS</a></li>
+            <ul class="login">
+                <li><a href="#" class="login">로그인</a></li>
+                <li><a href="#" class="login">회원가입</a></li>
+            </ul>
+        </ul>
+    </div>
+</body>
+</html>

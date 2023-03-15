@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x=10,y=20;
+        document.write(eval('x+y'));/* 함수를 정의하자마자 호출가능한 함수 eval()*/
+        console.log(isFinite(true));
+        console.log(isFinite("문자열"));
+        console.log(isFinite(undefined));
+        console.log(isFinite(NaN));
+        console.log(isFinite('a'));
+        console.log(parseInt('213'));
+        console.log(parseInt('123.000'));
+        console.log(parseInt('123.567'));
+        console.log(parseInt('12 34 56'));
+        console.log(parseInt('    123     '));
+        console.log(parseInt('123 다이아몬드'));
+        console.log(parseInt('다이아몬드 123'));
+        console.log(parseInt('10',10));
+        console.log(parseInt('10',8));
+        console.log(parseInt('aa',16));
+        console.log(parseInt('11',2));
+        let uri="https://search.naver.com/search?name=홍길동&location=서울";
+        let enc1= encodeURI(uri);
+        let enc2=encodeURIComponent(uri);
+        console.log(uri);
+        console.log(enc1);
+        console.log(enc2);
+        let dec1= decodeURI(uri);
+        let dec2= decodeURIComponent(uri);
+        console.log(uri);
+        console.log(dec1);
+        console.log(dec2);
+
+        /* uri 네트워크 상에서 해당 자원이 위치한 정확한 위치를 나타낸 문자열 */
+        console.log(Number('123'));
+        console.log(Number('123.000'));
+        console.log(Number('12 34 67'));
+        console.log(Number('123 diamond'));
+        console.log(Number('diamond 123'));
+        console.log(Number(true));
+        console.log(Number(false));
+        console.log(Number(new Date()));
+        console.log(Number(null));
+        console.log(typeof(Number('123')));
+        console.log(Number('123') instanceof Object);
+        console.log(Number('123') instanceof Number);
+
+    </script>
+</body>
+</html>

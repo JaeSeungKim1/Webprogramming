@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습</title>
+</head>
+<body>
+    <h1>숫자의 합</h1>
+    <script>
+        let fnum = 100;
+        let sum= 0;
+        while(fnum>0)sum+=(fnum--);/* while문 활용 100까지의 합*/
+        document.write("합"+sum);
+        document.write("<br>");
+        fnum=100;
+        sum=0;
+        for(;fnum>0;fnum--)sum+=fnum;/* for문 활용 100까지 합 */
+        document.write("합"+sum);
+        document.write("<br>");
+        fnum=100;
+        sum=0;
+        for(;fnum>0;fnum--)((fnum%2==0)||(fnum%3==0))?sum+=fnum:"";
+        document.write("합"+sum);/* 2,3배수들의 합 */
+        /* 시간 복잡도는 그대로나 공간 복잡도는 최대한 줄이고 코드 수도 최소화 */
+        fnum=0;
+        sum=0;
+        /* for(;fnum<=100;fnum++)(sum>=125)? break : sum+=fnum; */
+    </script>
+</body>
+</html>

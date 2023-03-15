@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date 객체함수</title>
+</head>
+<body>
+    <script>
+        let now=new Date();
+        console.log(now);
+        console.log(new Date("December 14,2011 15:30:10"));
+        console.log(new Date(80000000000));//1970년 1월1일 기준
+        console.log(new Date(16,5,25));
+        console.log(new Date(16,5,25,15,40,0));
+        console.log(new Date(2016,5,25,15,40,0));
+
+
+        let nowMilSec = Date.now();
+        console.log(nowMilSec);
+        console.log(new Date(nowMilSec));
+
+
+        let date = new Date();
+        console.log(date.getFullYear(),date.getMonth()+1,date.getDate());
+       
+        let day;
+        switch(date.getDay()){
+            case 0:day='일';
+                break;
+            case 1: day='월';
+                break;
+            case 2: day='화';
+                break;
+            case 3: day='수';
+                break;
+            case 4: day='목';
+                break;
+            case 5: day='금';
+                break;
+            case 6: day='토';
+                break;
+        }
+        console.log(day+'요일');
+        let days = ['일','월','화','수','목','금','토'];
+        console.log(days[date.getDay()]+'요일');
+
+
+        let period = date.getTime()/86400000;
+        console.log(Math.floor(period),period.toFixed(3));
+
+
+        date.setFullYear(2022,8,6);
+        console.log(date);
+        console.log(date.getFullYear(),date.getMonth()+1,date.getDate());
+        date.setDate(30);
+        console.log(date);
+        date.setDate(45);
+        console.log(date);
+
+
+        console.log(date.getHours(),date.getMinutes(),date.getSeconds()
+            ,date.getMilliseconds());
+        date.setHours(10,30,30);
+        console.log(date);
+
+
+        function printNow(){
+            const today=new Date();
+           
+            let days = ['일','월','화','수','목','금','토'];
+            let day = days[today.getDay()];
+
+
+            let year = today.getFullYear();
+            let month = today.getMonth()+1;
+            let date = today.getDate();
+            let hour = today.getHours();
+            let min = today.getMinutes();
+            let sec = today.getSeconds();
+
+
+            let ampm = hour>=12?'PM':'AM';
+            hour %= 12;
+            hour = hour<10?'0'+hour:hour;
+            min = min<10?'0'+min:min;
+            sec = sec<10?'0'+sec:sec;
+            const now = year+'년'+month+'월'+date+'일'+day+'요일'+hour+':'
+                +min+':'+sec+ampm;
+            console.log(now);
+            setTimeout(printNow,1000);
+            document.getElementById('date').innerHTML=now;
+        }
+        printNow();
+    </script>
+    <div id="date"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

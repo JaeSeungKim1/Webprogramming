@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+</head>
+<body>
+    <h1>if</h1>
+    <script>
+        let num1=2, num2=3;
+        document.write(num1+","+num2+"<br>");
+        if(num1==num2)document.write(num1+"은"+num2+"와 같습니다");
+        else if(num1<num2) document.write(num1+"은"+num2+"보다 큽니다");
+        else document.write(num1+"은"+num2+"보다 작습니다");
+    </script>
+    <h1>switch</h1>
+    <script>
+        
+        switch(window.prompt("switch문 값 입력(1,2,3)")){
+            case "1": document.write("일");
+            break;
+            case "2": document.write("이");
+            break;
+            case "3": document.write("삼");
+            break;
+            default: document.write("범위 외의 값 입력");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS position</title>
+    <style>
+        div.static{
+            border:2px solid orange;
+            background-color: lightblue;
+            position: static;
+        }
+        div.relative{
+            border:2px solid red;
+            width:500px;height: 200px;
+            position:relative;
+            left:50px;
+        }
+        div.relative2{
+            border:2px solid green;
+            width: 200px;
+            position:relative;
+            top:50px;
+            left:0px;
+            right:0px;
+            bottom:0px;
+        }
+        div.absolute{
+            border:2px solid green;
+            width:200px;
+            position:absolute;
+            bottom:10px;
+            left:20px;
+        }
+        div.fixed{
+            border:2px solid yellow;
+            width:350px;
+            position:fixed;
+            top:100px;right:10px;
+        }
+        div.sticky{
+            background:cyan;
+            opacity: 0.8;
+            position:sticky;
+            top:0;
+            bottom:0;
+        }
+        .position{ width:180px;height: 50px;}
+        .first{
+            background-color: orange;
+            position:relative;
+            top:-30px;left:120px;
+        }
+        .last{
+            background-color: orange;
+            position:relative;
+            top:-30px;left: 120px;z-index: -1;;
+        }
+        .img{position:absolute;clip:rect(0px,200px,200px,0px)}
+    </style>
+</head>
+<body>
+    <h3>정적 위치(static position) 지정 방식</h3>
+    <div class="static">정적 위치 방식 설정</div>
+    <p>정적 위치는 기본적인 페이지 흐름에 따라 위치를 설정</p>
+
+    <h3>상대 위치(relative position) 지정 방식</h3>
+    <div class="relative">상대 위치 방식 설정
+        <div class="absolute">절대 위치 방식 설정</div>
+        <div class="relative2">상대 위치 방식 설정</div>
+    </div>
+    <br>
+    <p>상대 위치는 페이지 흐름에 따라 위치하되 상하좌우 위치 조정</p>
+
+    <h3>고정 위치(fixed position) 지정 방식</h3>
+    <div class="fixed">고정 위치 지정 방식 설정</div>
+
+    <h3>절대 위치(absolute position) 지정 방식</h3>
+    <p>
+        절대 위치는 해당 요소의 상위 요소의 위치가 설정된 곳에 따라 
+        위치 조정
+    </p>
+
+    <div class="sticky">sticky 방식의 위치 지정</div>
+
+    <h3>z-index</h3>
+    <div>
+        <div class="static position">정적 위치</div>
+        <div class="first position">상대 위치</div>
+    </div>
+    <br>
+    <div>
+        <div class="static position">정적 위치</div>
+        <div class="last position">상대 위치</div>
+    </div>
+
+    <img src="../0309/images/backgroundimage.JPG" class="img">
+</body>
+</html>
+
+

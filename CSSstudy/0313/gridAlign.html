@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Alignment</title>
+    <style>
+        .container{
+            border:3px solid black;border-radius: 5px;
+            background-color:lightgreen;font-size:1.1em;
+            line-height:1.3;height:300px;
+            display:grid;
+            grid-template-columns:repeat(auto-fill,minmax(30%,auto));
+            /*items 개별 아이템 content 아이템 그룹
+            align 세로 justify 가로 place 축약*/
+            /* 
+            items-start end center stretch
+            content-start end center stretch space-between
+            space-around space-evenly
+            */
+            /* align-items:center;
+            justify-items: center; */
+            /* place-items: stretch center; */
+            align-content: space-evenly;
+            justify-content: space-around;
+            place-content: stretch stretch;
+        }
+        .item{
+            margin:3px;padding:2px;border:2px solid darkorange;
+            font-weight:bold;border-radius: 3px;
+            background-color: lightgoldenrodyellow;
+        }
+        .item:nth-child(1){
+            background-color:red;
+            /*self*/
+            align-self:end;
+            justify-self: start;
+            place-self: stretch start;
+        }
+        .item:nth-child(7){order:3;}
+        .item:nth-child(8){order:1;}
+        .item:nth-child(9){order:2;}
+        .item:nth-child(5){
+            transform: scale(2);
+            z-index:1;
+        }
+        .item:nth-child(3){z-index:-2;}
+        .item:nth-child(7){z-index:3;}
+        .item:nth-child(5){}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">A1</div>
+        <div class="item">B2</div>
+        <div class="item">C3</div>
+        <div class="item">D4</div>
+        <div class="item">E5</div>
+        <div class="item">F6</div>
+        <div class="item">G7</div>
+        <div class="item">H8</div>
+        <div class="item">I9</div>
+    </div>
+</body>
+</html>

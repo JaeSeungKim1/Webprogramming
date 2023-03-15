@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS transform 2d</title>
+    <style>
+        div{width:200px;height: 150px; position:absolute;margin:50px 150px; border: 3px solid black;}
+        #translate{
+            border:3px solid red; background-color: skyblue;
+            /* transform:translate(100px,50px); */
+            /* 
+            translateX(100px)
+            translateY(50px)
+            */
+        }
+        #rotate{
+            border-color:red;background-color:skyblue;
+            /* transform:rotate(-40deg); */
+        }
+        #scale_in{
+            border-color:red;
+            background-color:skyblue;
+            transform:scale(1.5);/* scaleX(1.5) scaleX(1.5); 기존 요소의 x,y축 방향으로 확대 즉 양 측 1.5배 */
+        }
+        #scale_de{
+            border-color: red; background-color:skyblue;
+            transform:scale(0.6);
+        }
+        #skewx{
+            border-color: red; background-color:skyblue;
+            transform:skew(30deg,30deg);
+        }
+        #skewy{
+            border-color: red; background-color:skyblue;
+            transform:skewy(30deg);
+        }
+        #skew{
+            border-color: red; background-color:skyblue;
+            transform:skewy(30deg) skewx(30deg);
+        }
+        #matrix{
+            border-color: red; background-color:skyblue;
+            transform:matrix(2,0.3,0.2,1.5,150,100);/* x축,y축, */
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="origin">기본요소</div>
+    <div id="translate">translate 이동한 요소</div>
+    <div id="rotate"> rotate 회전한 요소</div>
+    <div id="scale_in">크기 확대 요소</div>
+    <div id="scale_de">크기 축소 요소</div>
+    <div id="skewy">기울임 요소</div>
+    <div id="matrix">한번에 처리</div> -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div id="skewx">기울임 요소</div>
+    <div id="skew">기울임 요소</div>
+</body>
+</html>

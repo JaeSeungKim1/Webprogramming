@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{border:3px solid orange;}
+        span{display: inline-block;border:1px solid black;}
+        /*자손 선택자*/
+        div p{ background-color:aqua;}
+        /*자식 선택자*/
+        div>p{background-color:lightgreen;}
+        /*인접 동위(형제 선택자)*/
+        div~p{background-color: lightcoral;}
+        /*인접 동위(형제 선택자)*/
+        div+p{background-color:lightgray;}
+    </style>
+</head>
+<body>
+    <h3>결합 선택자 이용</h3>
+    <p>위 외부 태그</p>
+    <div>
+        <p>div 바로 아래 있는 p태그</p>
+        <p>div 바로 아래 있는 p태그</p>
+        <h4>무관한 태그</h4>
+        <span>
+            <p>span 안에 있는 태그</p>
+        </span>
+    </div>
+    <span>우리우리</span>
+    <p>아래 외부 p태그</p>
+    <p>아래 아래 p외부 태그</p>
+</body>
+</html>

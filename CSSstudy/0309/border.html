@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model Border</title>
+    <style>
+        div{width:300px;}
+        div>p:nth-child(3n+1){text-align: center;}
+        div>p:nth-child(3n+2){text-align: right;}
+        div>p:nth-child(3n){text-align: left;}
+        .border1{
+            border-style: dotted dashed solid double;
+            border-width: 2px 0.5em 1mm 10Q;
+            border-color: blue red yellow green;
+        }
+        .border2{background-color: lemonchiffon;}
+        .border2 p{border-width: 10px;}
+        .groove{border-style: groove;}
+        .ridge{border-style: ridge;}
+        .inset{border-style: inset;}
+        .outset{border-style: outset;}
+        .border3{border-style: none hidden;}
+        .border4{
+            border-top-style: solid;
+            border-top-color: blue;
+            border-top-width: 3px;
+            border-bottom:5px solid red;
+            border-left: 1rem solid green;
+            border-right: 1em solid yellow;
+        }
+        .good{border:teal 3px;}
+        .wrong{border:teal 3px;}
+        p.normal{border:2px solid red; padding: 5px;}
+        p.round2{border-radius: 8px; border:8px solid red; padding: 5px;}
+        p.round3{border-radius: 8px; border:12px solid red; padding: 5px;}
+        p.round4{border-radius: 8px; border:30px solid red; padding: 5px;}
+        p.round4{border-radius: 30px; height: 30px; border: 2px solid red; padding: 5px;}
+        #p{
+            padding:20px; border:20px solid transparent;
+            border-image: url('images/kkoimage.png') 10 round stretch;
+        }
+    </style>
+</head>
+<body>
+    <h3>border 속성을 이용한 테두리 변경</h3>    
+    <div class="border1">
+        <p class="dotted">dotted</p>
+        <p class="dashed">dashed</p>
+        <p class="double">double</p>
+        <p class="solid">solid</p>
+    </div>
+    <div class="border2">
+        <p class="groove">groove</p>
+        <p class="ridge">ridge</p>
+        <p class="inset">inset</p>
+        <p class="outset">outset</p>
+    </div>p;l[[
+    <div class="border3">
+        <p class="none">none</p>
+        <p class="hidden">hidden</p>
+        <p class="hidden">hidden</p>
+        <p class="none">none</p>
+    </div>
+    <div class="border4">
+        <p class="top">top</p>
+        <p class="right">right</p>
+        <p class="left">left</p>
+        <p class="bottom">bottom</p>
+    </div>
+    <p class="good">스타일 속성 설정</p>
+    <p class="wrong">스타일 속성 미설정</p>
+    <p class="normal">normal</p>
+    <p class="round2">round2</p>
+    <p class="round3">round3</p>
+    <p class="round4">round4</p>
+    <img src="images/kkoimage.png">
+    <p id="p">image border</p>
+</body>
+</html>

@@ -1,0 +1,180 @@
+/* 백그라운드 이미지 출력 방식 */
+#background_img{
+    display: inline-block;
+    width: 330px;
+    height: 450px;
+    color: red;
+    background-color: black;
+    background-image: url("../image/대화.JPG");
+    background-size: 80px 80px;
+    background-repeat: no-repeat;
+    /* background-repeat: repeat-x; ==가로 줄 전부 체움 */
+    /* background-position: top left 기본 설정 */
+    background-position: bottom right;
+    /* background-position: 100px 60px; */
+    /* background-position: 0% 80px; */
+    /* background-attachment: fixed; */
+}
+
+/* 백그라운드 클립형식 표현 */
+#backgroundclip{
+    background-color: rgb(144, 238, 144,0.5);
+    width: 310px; height: 450px;
+    display: inline-block;
+}
+#backgroundclip div{
+    box-sizing: border-box;
+    width: 300px;margin:20px 0px;
+    padding:20px;border:10px dotted whitesmoke;
+    background-color: lightgray;          
+}
+#backgroundclip.a{background-clip: border-box;}
+#backgroundclip.b{background-clip: padding-box;}
+#backgroundclip.c{background-clip: content-box;}
+
+/* 마진영역 설정 */
+#marginCASE{display: inline-block; width: 350px; height: auto; background-color: rgb(173, 216, 230,0.5); }
+#marginCASE div{height:3em;background-color: lightgray;
+    border:2px solid teal;}
+    #marginCASE div.parent{
+    height: 100px;
+    margin-top:-30px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    margin-left:100px;
+}
+#marginCASE div.child{
+    background-color: antiquewhite;
+    margin-left: inherit;
+}
+#marginCASE div.four{margin:20px 50px 30px 50px;}
+#marginCASE div.auto{width:350px;margin:auto;}
+
+/* 패딩 영역 설정 */
+#paddingArea{display: inline-block; background-color: lightgreen; width: auto; vertical-align: top;}
+#paddingArea div{background-color: skyblue;width: 300px;
+    border:2px solid teal;
+    background-clip: content-box;}
+#paddingArea .pad{
+    padding-top: 10px; padding-right: 20px;
+    padding-bottom: 30px; padding-left: 40px;
+}
+#paddingArea .four{padding:10px 20px 30px 40px;}
+#paddingArea .three{padding:10px 20px 30px;}
+#paddingArea .two{padding:10px 20px;}
+#paddingArea .one{padding:10px;}
+
+
+/* 테두리 설정 모음 */
+#borderCASE{display: inline-block; width: 450px; background-color: lightblue;}
+#borderCASE div{width:300px;}
+#borderCASE div>p:nth-child(3n+1){text-align: center;}
+#borderCASE div>p:nth-child(3n+2){text-align: right;}
+#borderCASE div>p:nth-child(3n){text-align: left;}
+
+#borderCASE .border1{
+    border-style: dotted dashed solid double;
+    border-width: 2px 0.5em 1mm 10Q;
+    border-color: blue red yellow green;
+}
+#borderCASE .border2{background-color: lemonchiffon;}
+#borderCASE .border2 p{border-width: 10px;}
+#borderCASE .groove{border-style: groove;}
+#borderCASE .ridge{border-style: ridge;}
+#borderCASE .inset{border-style: inset;}
+#borderCASE .outset{border-style: outset;}
+#borderCASE .border3{border-style: none hidden;}
+#borderCASE .border4{
+    border-top-style: solid;
+    border-top-color: blue;
+    border-top-width:3px;
+    border-bottom:5px solid red;
+    border-left:1em solid green;
+    border-right:1em solid yellow;
+}
+#borderCASE .good{border:3px solid teal;}
+#borderCASE .wrong{border:teal 3px;}
+
+#borderCASE p.normal{border:2px solid red;padding:5px;}
+#borderCASE p.round2{border-radius: 8px;border:2px solid red;padding:5px;}
+#borderCASE p.round3{border-radius: 12px;border:2px solid red;padding:5px;}
+#borderCASE p.round4{border-radius: 30px;height: 30px;
+border: 2px solid red;padding:5px;}
+#borderCASE #p{
+padding:20px; border:20px solid transparent;
+border-image: url('image/kkoimage.png') 10 round stretch;
+}
+
+/* 아웃라인 모음 */
+#outlineCASE{display:inline-block; background-color: lightgoldenrodyellow; width: 300px; height: auto;vertical-align: top;}
+#outlineCASE>p{
+    background-color: lightgreen;
+    border:3px solid black;
+    padding:5px;margin:30px;
+    outline-width: 9px;
+    outline-color: red;
+    outline-offset: 5px;
+}
+#outlineCASE>.dotted{outline-style: dotted;}
+#outlineCASE>.dashed{outline-style: dashed;}
+#outlineCASE>.solid{outline-style: solid;}
+#outlineCASE>.double{outline-style: double;}
+#outlineCASE>.groove{outline-style: groove;}
+#outlineCASE>.ridge{outline-style: ridge;}
+#outlineCASE>.inset{outline-style: inset;}
+#outlineCASE>.outset{outline-style: outset;}
+#outlineCASE>.none{outline-style: none;}
+#outlineCASE>.hidden{outline-style: hidden;}
+
+
+/* 디스플레이 모음 */
+#displayCASE{
+    width: 500px; background-color: antiquewhite; height: auto; display:inline-block; vertical-align: top;
+}
+#displayCASE li{display: inline;}
+#displayCASE a{display: block;}
+#displayCASE div:not([class="visibility"]){width:100px;height:50px;}
+#displayCASE .first{background-color: aqua;}
+#displayCASE .second{background-color: green;}
+#displayCASE .third{background-color: yellow;}
+#displayCASE .inline{display: inline;}
+#displayCASE .inline-block{display: inline-block;}
+#displayCASE div.visibility{background-color: ivory;
+        border:2px solid black;}
+#displayCASE .none{display: none;}
+#displayCASE .hidden{visibility: hidden;}
+
+
+/* float속성 활용 */
+#floatCASE{display: inline-block; background-color: lightgreen; width: 500px; height: auto; vertical-align: top;}
+        #floatCASE #img{ margin-left:20px; float:right;}
+        #floatCASE .left{
+            background-color: orange;
+            width: 150px;height: 150px;
+            float:left;
+        }
+        #floatCASE .right{
+            background-color: violet;
+            width: 150px;height: 150px;
+            float: right;
+        }
+        /* float 밑으로 내리고싶다면 밑에 속성 활성화 */
+        #para{clear:both;}
+        #floatCASE div.page{border:3px solid pink;overflow:auto;}
+        #floatCASE h2{text-align: center;}
+        #floatCASE header{border:3px solid sandybrown;}
+        #floatCASE #nav{
+            border:3px solid deeppink;
+            width: 150px;min-height: 150px;
+            float:left;
+            height: 30%;
+        }
+        #floatCASE #section{
+            border:3px solid skyblue;
+            margin-left: 160px;
+            height: 30%;
+        }
+        #floatCASE #footer{border:3px solid lightgreen;}
+
+
+

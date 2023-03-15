@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Skillelement1.css" type="text/css">
+    <title>Document</title>
+    <style>
+        #Validation input:hover,input:focus{
+          background-color:rgba(100,100,100,0.2);}
+        #Validation input:not([type="password"]){background:coral;}
+        #Validation input[type="text"]:valid{background-color: greenyellow;}
+        #Validation input[type="text"]:invalid{background-color: royalblue;}
+        #Validation input:required{background-color: rgb(255, 0, 174);}
+        #Validation input:optional{background-color: rgb(25, 79, 114);}
+  
+        #Validation #val:in-range{background-color: lightgreen;}
+        #Validation #val:out-of-range{background-color: lightcoral;}
+
+    
+        .dropdown{display:inline-block;}
+        .dropdown-btn{
+            background-color: antiquewhite;
+            padding:10px;font-size: 15px;
+            border:none;
+        }
+        .dropdown-content{
+            display: none;
+            background-color: blanchedalmond;
+            padding:5px;
+            box-shadow: 0 8px 16px black;
+        }
+        .dropdown-content a{
+            display: block;
+            color:black;
+            text-decoration: none;
+            padding:8px;
+        }
+        .dropdown:hover .dropdown-content{display:block;}
+        /*.dropdown-btn:hover+.dropdown-content{display:block;}*/
+        .dropdown:hover .dropdown-btn{background-color: orange;}
+        .dropdown-content:hover a:hover{background-color: orange;}
+        /*
+        */
+    </style>
+        
+      </style>
+</head>
+<body>
+    <form id="Validation" style="display: inline-block; background-color: lightblue;">
+        <fieldset>
+          <legend>유효성 검사Validation</legend>
+          <label for="name">이름: </label>
+          <input type="text" id="name" name="name" required><br>
+          <label for="pw">암호: </label>
+          <input type="password" id="pw" name="pw" required><br>
+          <label for="email">이메일: </label>
+          <input type="email" id="email" name="email"><br>
+          <label for="stext">특수문자 미포함 4자리 문자</label>
+          <input type="text" id="stext" name="stext" maxlength="4"
+              pattern="[a-zA-Z]{4}" required value="pattern=정규식 required"><br>
+          <label for="phone">핸드폰 번호:</label>
+          <input type="text" id="phone" name="phone" 
+               placeholder="pattern=정규식 required"
+              pattern="^\d{3}-\d{4}-\d{4}$" required><br>
+        </fieldset>
+        <button type="submit">테스트</button>
+    </form>
+
+
+    <h1>드롭다운 메뉴</h1>
+    <div class="dropdown">
+        <button class="dropdown-btn">Dropdown</button>
+        <div class="dropdown-content">
+            <a href="#">HTML</a>
+            <a href="#">CSS</a>
+            <a href="#">JAVA</a>
+        </div>
+    </div>
+    
+</body>
+</html>

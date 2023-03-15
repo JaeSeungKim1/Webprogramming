@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript number</title>
+</head>
+<body>
+    <script>
+        let num=365;
+        console.log(num.toString(2));
+        console.log(num.toString(8));
+        console.log(num.toString(16));/* 몇진수로 표현할 지 매개변수로 받음 */
+        console.log(num.toString(2)/2);
+        let a=100-'10';
+        let b=100-'string';
+        let c=100/0; /*자바에서는! ArithmaticException 자바 스크립트에서는 Infinity뜸*/
+        console.log(a,b,c);
+        console.log(isNaN(a));
+        let x=100;/* number  원시형 변수*/
+        let y=new Number(100);/* Number 참조형 변수*/
+        console.log(typeof x,typeof y);
+        console.log(x==y,x===y);
+        console.log("");
+        console.log(Number.parseFloat('12.23'));
+        console.log(Number.parseInt('12.23'));
+        console.log(Number.isNaN(NaN));
+        console.log(isNaN(undefined),Number.isNaN(undefined));
+        console.log(Number.isFinite(Infinity));
+        console.log(isFinite('0'),Number.isFinite('0'));
+        console.log(isFinite(null),Number.isFinite(null));
+        console.log(Number.isInteger(-100),Number.isInteger(0.1));
+        let expo=12.345678;
+        console.log(expo.toExponential());
+        console.log(expo.toExponential(2));
+        console.log(expo.toExponential(4));
+        console.log(12.345678.toExponential());
+
+        let pi=3.1415925;
+        console.log(pi.toFixed(),pi.toFixed(2));  /*  정수/소수 몇째짜리까지 읽어준다 */
+        console.log(pi.toPrecision(),pi.toPrecision(3));  /* 있는 그대로 읽고/ 몇번째까지 읽겟다 */
+
+        let numObj = new Number(444);
+        let val=numObj.valueOf();
+        console.log(val,typeof val, typeof numObj);
+    </script>
+</body>
+</html>

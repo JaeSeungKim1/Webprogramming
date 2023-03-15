@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+    <script>
+        
+        function addNum(x,y){
+            if(x===undefined) x=0;
+            if(y===undefined) y=0;
+            return x+y;
+        }
+        console.log(addNum(2,3));
+        console.log(addNum(2,3.5));
+        console.log(addNum('1',2));
+        console.log(addNum(1,'2'));
+        console.log(addNum(2));
+
+        function addNumWithArgs(x,y,...a){
+            return a.reduce((x,y)=>x+y); 
+        }
+        console.log(addNumWithArgs(1,2,3,4));
+    </script>
+</body>
+</html>

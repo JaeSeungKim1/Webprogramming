@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model Margin</title>
+    <style>
+        div{
+            height:3em;background-color:lightgray;
+            border:2px solid teal;}
+        div.parent{
+            height:100px;
+            margin-top:-30px;
+            margin-right:10px;
+            margin-bottom: 30px;
+            margin-left:100px;
+        }
+        div.child{
+            background-color: antiquewhite;
+            margin-left: inherit;
+        }
+        div.four{margin: 20px 50px 30px 50px;}
+        div.auto{width:350px;margin: auto;}
+        /*제대로 수치 계산을 하지 못하여 부모 태그의 요소영역보다 자식 요소 영역이 더 크다면 튀어나오는 현상이 발생*/
+    </style>
+</head>
+<body>
+    <h3>마진 영역 설정</h3>
+    <div>미설정 div 요소</div>
+    <div class="parent">left margin 100px
+        <div class="child">left margin inherit</div>
+    </div>
+    <div class="four">margin 속성 4개</div>
+    <div class="auto"> margin 속성 auto</div>
+</body>
+</html>

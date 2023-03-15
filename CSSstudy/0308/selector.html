@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자</title>
+    <style>
+        h4{color: teal;}
+        #heading{color: rgb(0,0,0); }
+        .title{ color:rgba(255,0,0,0.1); font-size:13px; text-align:left;}
+        h2,#heading,.title{color:#000000;}
+        /* 전체 선택자  hsl hsla 색상*/
+       /* *{color:hsl(108,22%,35%);} */
+        *{color:hsl(108,22%,35%,0.5);}
+    </style>
+</head>
+<body>
+    <h3>선택자를 통한 선택</h3>
+    <h4>해당 부분에 적용</h4>
+    <h4 id="heading">아이디를 통해 적용</h4>
+    <h4 class="title">클래스를 통해 적용</h4>
+    <h4 class="title">클래스를 통해 적용</h4>
+    <h2>그룹 선택자</h2>
+</body>
+</html>

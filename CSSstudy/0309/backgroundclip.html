@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            box-sizing: border-box;
+            width:100%; margin: 20px 0px;
+            padding:20px;border:20px dotted whitesmoke;
+            background-color: lightgray;
+        }
+        .a{background-clip: border-box;}
+        .b{background-clip: padding-box;}
+        .c{background-clip: content-box;}
+    </style>
+</head>
+<body>
+    <p>border-box</p>
+    <div class="a">우리집 앞산</div>
+    <p>padding-box</p>
+    <div class="b">우리집 뒷산</div>
+    <p>content-box</p>
+    <div class="c">우리집 옆산</div>
+</body>
+</html>

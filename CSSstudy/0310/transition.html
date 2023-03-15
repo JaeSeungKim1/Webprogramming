@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS transition</title>
+    <style>
+        #inst{
+            width: 100px;height: 50px;
+            background-color: red;
+            margin-bottom:10px;
+            transition-property: width,background-color;/* 변화를 줄 속성 지정 */
+            transition-duration: 1s,1s;/* 변화가 끝나는 시간 설정 1초 */
+        }
+        #inst:hover{
+            width:300px;/* 100>>300 1초만에 변화를 준다. */
+            background-color: blue;/* red >>blue색상으로 1초만에 변화를 준다. */
+        }
+        div{
+            font:bold 15px "Open Sans";
+            color:white;
+            text-align:center;
+            width:100px;height:50px;
+            background-color: red;
+            margin-bottom: 10px;
+            transition: width 3s;/* 변화 속성, 시간 한번에 지정 */
+        }
+        .t1{transition-timing-function: ease;}/* 느리다가 빨라짐 */
+        .t2{transition-timing-function: linear;}/* 속성변화 일정속도 */
+        .t3{transition-timing-function: ease-in;}/* 도입부분에 느리다 빨라짐 */
+        .t4{transition-timing-function: ease-out;}/* 도입부분에 빠르다 변화 최종값 도착시간에 느려진다 */
+        .t5{transition-timing-function: ease-in-out;}/* 도입부분에도 느리고 변화 최종값 도착시간에도 느려진다 */
+        .timing:hover{width:300px;}
+        .d1{transition-delay: 0s;}/* 너비 100>300까지의 도착 시간 설정 */
+        .d2{transition-delay: 1s;}
+        .d3{transition-delay: 3s;}
+        .delay:hover{
+            width:300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="inst"></div>
+    <h3>transition timing function</h3>
+    <div class="timing t1">ease</div>
+    <div class="timing t2">linear</div>
+    <div class="timing t3">ease-in</div>
+    <div class="timing t4">ease-out</div>
+    <div class="timing t5">ease-in-out</div>
+    <h3>transition delay</h3>
+    <div class="delay d1">0s</div>
+    <div class="delay d2">1s</div>
+    <div class="delay d3">3s</div>
+</body>
+</html>

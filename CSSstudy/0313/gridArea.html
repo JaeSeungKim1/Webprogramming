@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid name Area</title>
+    <style>
+        .wrapper{
+            display: grid;
+            background-color: orangered;
+            grid-template-columns: repeat(5,1fr);
+            grid-auto-rows: 100px 120px 200px 10px 100px;
+            grid-template-areas:
+            "header header header header header"
+            "sidebar sidebar main main main"
+            "sidebar sidebar main main main"
+            "sidebar sidebar . . ."
+            "sidebar sidebar footer footer footer";
+        }
+        .header{grid-area: header;}
+        .sidebar{grid-area: sidebar;}
+        .content{grid-area: main;}
+        .footer{grid-area: footer;}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">HEADER</div>
+        <div class="sidebar">sidebar</div>
+        <div class="content">content</div>
+        <div class="footer">FOOTER</div>
+    </div>
+</body>
+</html>

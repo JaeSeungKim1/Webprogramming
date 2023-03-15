@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Practice</title>
+</head>
+<body>
+    <script>
+    let fruits=['apple','melon','kiwi','banana'];
+    fruits.forEach(e=>console.log(e+"\n"));
+    fruits.shift('orange');
+    fruits.forEach(e=>console.log(e+"\n"));
+    fruits.push('watermelon');
+    fruits.forEach(e=>console.log(e+"\n"));
+    fruits.splice(3,0,'grape');
+    fruits.forEach(e=>console.log(e+"\n"));
+    fruits.sort();
+    fruits.forEach(e=>console.log(e+"\n"));
+    fruits.join('/');
+    for(e of fruits)document.write(e+"<br>");
+</script>
+</body>
+</html>
