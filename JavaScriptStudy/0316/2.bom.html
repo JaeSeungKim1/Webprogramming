@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+</head>
+<body>
+    <button onclick="openFunc()">naver</button>
+    <script>
+        /* window 객체(함수)
+            alert() prompt() confirm() open()
+        */
+       function openFunc(){
+       window.open('https://www.naver.com','_blank');} /* _blank는 새창을 열게 하는 명령 */
+        /*history 객체
+            back() forward()-> 한개씩   /go(숫자) -> 몇단계 이동할건지 
+         */
+        /* location 객체
+
+         */
+        document.write("href:"+location.href,"<br>"); //href:http://127.0.0.1:5500/0316/bom.html
+        document.write("hostname:"+location.hostname,"<br>");//hostname:127.0.0.1
+        document.write("host:"+location.host,"<br>");//host:127.0.0.1:5500
+        document.write("protocol:"+location.protocol,"<br>");//protocol:http:
+        document.write("protocol:"+location.protocol,"<br>");
+        document.write("search:"+location.search,"<br>");/* 검색을 하면 search로 뜨는 창 */
+        //location.reload();(새로고침 실행)
+
+        /* navigator 객체 브라우저 정보 운영체제의 정보
+        
+        */
+       document.write("appCodeName"+navigator.appCodeName,"<br>");
+       document.write("appName"+navigator.appName,"<br>");
+       document.write("appVersion"+navigator.appVersion,"<br>");
+       document.write("language"+navigator.language,"<br>");
+       document.write("product"+navigator.product,"<br>");
+       document.write("platform"+navigator.platform,"<br>");
+       document.write("userAgent"+navigator.userAgent,"<br>"); /* 이걸 많이 사용 /  */
+       document.write('==============================================',"<br>") 
+       /*screen 객체 사용자의 모니터 정보 
+       
+       */
+      document.write("width"+screen.width,"<br>");
+      document.write("height"+screen.height,"<br>");
+      document.write("availHeight"+screen.availHeight,"<br>");
+      document.write("availWidth"+screen.availWidth,"<br>");
+      document.write("colorDepth"+screen.colorDepth,"<br>");
+      
+
+    </script>
+</body>
+</html>

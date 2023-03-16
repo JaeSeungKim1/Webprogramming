@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Object</title>
+</head>
+<body>
+    <strong id="message"></strong>
+    <div class="container">
+        <button id="btn1">숨기기1</button>
+        <button id="btn2">숨기기2</button>
+    </div>
+    <a href="http://www.naver.com">네이버</a>
+    <form>
+        <label for="chkbox">체크박스</label>
+        <input type="checkbox" id="chkbox">
+    </form>
+    <script>
+        const link=document.querySelector('a');
+        link.addEventListener('click',function(event){/* -> event 변수를 설정한거고 꼭 안넣어줘도 됨 */
+            console.log('click event');
+            console.log(event.cancelable); /* true일때만 동작이 가능한 것 */
+            event.preventDefault();// 해당 링크 이벤트를 막아주는 것
+        });
+        const chkbox = document.querySelector('#chkbox');
+        chkbox.addEventListener('click',function(e){
+            msg.innerHTML+='<code>preventDefault()</code><br>'; 
+            /* 클릭할때마다 preventDefault라는 단어가 찍히게 하는 의미 */
+            e.preventDefault();
+        });
+        const msg=document.querySelector('#message');
+        const body=document.querySelector('body');
+        function showType(e){
+            console.log(e);
+            e.preventDefault();
+            msg.innerHTML=e.showType+":"+e.keyCode;
+        }
+        body.addEventListener('keydown',showType); /* 이벤트가 실행되면? */
+        body.addEventListener('keyup',showType);
+
+        const container = document.querySelector('.container');
+        function hide(e){
+            console.log(e);
+            e.target.style.visibility='hidden'; /* 공간 차지 차이  */
+            console.log(e.target);
+            console.log(e.currentTarget);
+            console.log(e.type);
+        }
+        container.addEventListener('click',hide);
+
+        function printCoord(e,msg){
+            console.log(e);
+            out.innerHTM='x:'+d.clientX+'y:'+e.clientY;
+        }
+        addEventListener('click',function(e){
+            printCoord(e,msg);
+        });
+
+    </script>
+</body>
+</html>

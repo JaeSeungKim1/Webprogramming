@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class</title>
+</head>
+<body>
+    <script>
+        //클래스 선언
+        class Member{
+            //생성자
+            constructor(name,rank){
+                this.name=name;
+                this.rank=rank;
+            }
+            membership(){
+                console.log(`안녕하세요.${this.rank}${this.name}회원님!`)
+            }
+        }
+        //인스턴스 생성( 객체화 )
+        const mem=new Member('원빈','vip');
+        mem.membership();
+        console.log(mem instanceof Member);
+        console.dir(mem);
+    </script>
+</body>
+</html>

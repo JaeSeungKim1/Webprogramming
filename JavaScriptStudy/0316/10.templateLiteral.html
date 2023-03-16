@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>템플릿 리터럴</title>
+</head>
+<body>
+    <script>
+        const template=`'템플릿 리터럴'작은 따옴표'"큰따옴표"''';
+                        ';'""''""`;//backtick(백틱)
+        console.log(template);
+        const temp1 = `<ul class="nav"><li id='name'>kkk</li></ul>`;
+        document.write(temp1);
+        document.body.innerHTML+=temp1;
+        document.querySelector('body').innerHTML+=temp1;
+
+        let city='서울',nationality='한국';
+        console.log('여기는'+nationality+'의 '+city+'입니다.');
+        console.log(`여기는 ${nationality}의 ${city}입니다.`);
+        console.log(`3X4=${3*4}`);
+    </script>
+</body>
+</html>

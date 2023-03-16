@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .color{color:brown;}
+        .color2{color:blue;}
+    </style>
+</head>
+<body>
+    <div>
+        <h1>도시</h1>
+        <ul> <!-- 이 사이에 text가 들어가있다. -->
+            <li id="one" class="color">서울</li>
+            <li id="two" class="color">대구</li>
+            <li id="three" class="color">부산</li>
+            <li id="four">대전</li>  <!-- ul한테 상속받아서 파란색으로 바뀜 -->
+        </ul>  <!-- 이 사이에 text가 들어가있다. -->
+    </div>
+    <script>
+        const ele = document.querySelector('#two');
+        console.log(ele,ele.parentNode);
+        ele.parentNode.className='color2'   /* li< */
+        const ele2 = document.querySelector('ul');
+        console.log(ele2);
+        console.log(ele2.firstChild,ele2.lastChild);
+        console.log(ele2.firstElementChild,ele2.lastElementChild);
+        ele2.firstElementChild.className='color2'; /* 서울 빨간색을 파란색으로 바꾼다 */
+        ele2.lastElementChild.className='color';    /* 대전 파란색을 빨간색으로 바꾼다. */
+        console.log(ele2.firstElementChild.nextSibling,
+            ele2.lastElementChild.previousSibling)
+        console.log(ele2.firstElementChild.nextElementSibling,
+            ele2.lastElementChild.previousElementSibling);
+        ele2.firstElementChild.nextElementSibling.className='color2';
+        ele2.lastElementChild.previousElementSibling.className='color2';
+
+        /* ele3=document.querySelector('#one') //서울이 선택됨 */
+        const ele3=document.getElementById('one');
+        console.log(ele3);
+        console.dir(ele3);
+        console.log(ele3.nodeName,ele3.nodeType,ele3.nodeValue);
+        const textnode = ele3.firstChild;
+        textnode.nodeValue='인천';
+        console.dir(textnode);
+        console.log(textnode.nodeName,textnode.nodeType,textnode.nodeValue); 
+        /* textnode=프로퍼티 값 3이여서 text3이라고 콘솔창에 찍힘 */
+        console.log(ele.textContent);
+        console.log(ele3.textContent);
+        ele3.textContent='서울'; /* 인천 -> 서울로 다시 바꾸는 것 */
+
+        ele3.innerHTML += '<strong class="color">,한국</strong>';
+         /* -> 한국이라는 단어가 서울 옆에 가서 붙는다 */
+       /*  ele3.innerText += '<strong class="color">,한국</strong>'; */
+        /* -> 내가 친 text 타입이 그대로 입력되어 들어감 */
+
+        const newEle = document.createElement('li');//요소를 생성
+        //화면에서는 상관없이 표현 안되고 어디엔가 넣겟다는 의미
+
+        const newText = document.createTextNode('북경');//텍스트 노드 생성
+        //텍스트 노드를 해당 요소의 자식으로 DOM트리 구조 상에 추가
+
+        newEle.appendChild(newText);
+        //해당 요소를 메인 DOM 트리 구조에 추가
+        document.querySelector('ul').appendChild(newEle);//appendChild 새로운 요소 추가
+
+        const removeEle=document.getElementById('one');
+        document.querySelector('ul').insertBefore(newEle,removeEle); /* 북경요소를 한국 앞에 두겟다는 의미 */
+        newText.insertData(0,'중국'); /* (넣고자하는 위치, 중국을 넣겟다) */
+        document.querySelector('ul').removeChild(removeEle);//서울에 있던 열이 지워짐        
+    </script>
+        <input type="text">
+    <script>
+        const input=document.querySelector('input[type=text]') /* text 파일을 넣어주겟다 */
+        console.log(input);
+        if(!input.hasAttribute('placeholder')) {
+            input.setAttribute('placeholder','hello!');  /* placeholder에 hello라는 단어를 넣어주겟다 */
+        }
+        console.log(input.getAttribute('placeholder'));
+        input.removeAttribute('placeholder');   //안에 있던 문구가 사라지게 함
+    </script>
+</body>
+</html>

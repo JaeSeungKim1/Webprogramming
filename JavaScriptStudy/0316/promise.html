@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+</head>
+<body>
+    <script>
+      /*   console.log('hello');
+        setTimeout(()=>console.log('Bye'),3000);
+        console.log('hello again');       */   //해당 흐름대로 안찍고 먼저 찍고 타임을 주어 나중에 찍게하는것이
+                                            //비동기 방식이다 callback function
+        function goToSchool(){
+            console.log('학교에 갑니다.');
+        }
+        function arriveAtSchool_w(){
+            setTimeout(()=>console.log('학교도착'),1000);
+        }
+        function study(){
+            console.log('공부합시다');
+        }
+        function arriveAtSchool_r(){
+            return new Promise(function(resolve){
+                setTimeout(function(){
+                    console.log('달려서 학교도착');
+                    resolve();
+                },1000);
+            });
+        }
+       // goToSchool();
+      //  arriveAtSchool_r().then(()=>study());
+       /*  arriveAtSchool_w();
+        study(); */
+        function arriveAtSchool_ra(){
+            return new Promise(function(resolve,reject){
+                setTimeout(function(){
+                    var status=Math.floor(Math.random()*2);
+                    if(status===1){
+                        resolve('학교에 도착');
+                    }else{
+                        reject('중간에 사고 발생');
+                    }
+                },1000);
+            });
+        }
+        function cure(){
+            console.log('병원으로 가자');
+        }
+        goToSchool();
+        arriveAtSchool_ra()
+            .then(function(msg){
+                console.log(msg);
+                study();
+            })
+            .catch(function(ac){
+                console.log(ac);
+                cure();
+            })
+    </script>
+</body>
+</html>

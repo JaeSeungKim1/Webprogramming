@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표 함수</title>
+</head>
+<body>
+    <script>
+        let p1=function(x){return x*x};
+        //let p2=(x)=>{return x*x};
+        let p2 = x=>x*x;
+        console.log(p1(10),p2(10));
+
+        let age=23;
+      /*   let hi=(age<20)?function(){alert('안녕');}
+            :function(){alert('안녕하시옵니까');}; */
+            let hi=(age<20)?()=>alert('안녕'):()=>alert('안녕하시옵니까');
+       // hi();
+
+       let arr=[1,2,3,4,5];
+       /* const p3=arr.map(function(item){
+        return item**2;
+       });
+        */
+       /* const p3 = arr.map(e=>e**2); */
+       const p3 = arr.map(e=>Math.pow(e,2));
+        console.log(p3);
+
+        let group={
+            name:'studygroup',
+            member:['준현','아름','종호','현명','재승'],
+            showMember(){
+                console.log(this);
+                /* this.member.forEach(e=>document.write(e+"<br>")); */
+                this.member.forEach(function(mem){
+                    console.log(this);
+                    document.write(this.name+mem);
+                });
+
+            }
+        }
+        group.showMember();
+    </script>
+</body>
+</html>

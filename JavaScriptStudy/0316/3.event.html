@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <!-- 인라인 -->
+    <button onclick="handler();">클릭</button><br>
+    <button class="btn">클릭2</button>
+    <label>이름</label>
+    <input type="text">
+    <div id="input" style="display:none;">
+        <input class="password" type="password" value="123">
+        <button class="show">보여주기</button>
+    </div>
+    <script>
+        console.dir(document.querySelector('button'));
+        function handler(){
+            window.alert('클릭이벤트');
+            console.log(this);
+        }
+        const btn=document.querySelector('.btn');
+        btn.onclick=function(){
+            /* 요소.onclick=funtion을 할당 */
+            /* 객체이름.프로퍼티 이름 */
+            window.alert('프로퍼티 방식 이벤트');
+            document.querySelector('#input').setAttribute('style','display:block');
+            console.log(this); /* this는 내가 이벤트 발생시킨 것을 의미하는 것 */
+            /* 버튼 클릭했을 때 보여주기라는 창을 따로 펼쳐주기 위해 설정한 값 */
+        }
+        /* 표준방식 */
+        const input=document.querySelector('input[type=text]');
+        input.addEventListener('change',function(){
+            window.alert('eventlistener change 이벤트 발생');
+            console.log(this);
+        });
+     /*    addEventListener('click',function(){
+            alert('click event');           //누를 때마다 event를 발생시키는 방법
+        }); */
+
+        const password = document.querySelector(".password");
+        const show = document.querySelector('.show');
+   //     function clickHandler(){
+    //    let  type = password.getAttribute('type');
+   //         password.setAttribute('type',type=='text'?'password':'text'); /* text로 바꾸면 눈에 보이는 값 */
+   //         show.innerHTML=type=='text'?'숨기기':'보여주기'
+   //     }
+  //     show.onclick = clickHandler;//함수 이름을 onclick에다가 할당해줘야 함
+   //     show.onclick=function(){
+   //         if(password.getAttribute('type')=='password'){
+   //             password.setAttribute('type','text');
+   //             show.innerHTML='숨기기';
+   //         }else if(password.getAttribute('type')=='text'){
+   //             password.setAttribute('type','password');
+   //             show.innerHTML='보여주기';
+   //         }
+   //     }
+        function clickHandler(){
+            let isShow=false;
+            return function(){
+                password.setAttribute('type',type=='text'?'password':'text'); 
+                isShow=!isShow;
+                show.innerHTML=isShow?'숨기기':'보여주기';
+            }
+        }
+        show.onclick=clickHandler();
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예외처리</title>
+</head>
+<body>
+    <script>
+        try{
+            console.log('before error');
+            new Array(-1);
+            console.log('after');
+        }catch(e){
+            console.log('실행흐름 변경');
+            // alert('error:'+e.name+','+e.message);//에러가 나면 메세지로 표현해 달라는 문구
+        }finally{
+            console.log('반드시 실행');
+        }
+        const even=3;
+        if(even%2!==0){
+            throw new Error('짝수가 아닙니다');
+        }
+    </script>
+</body>
+</html>
