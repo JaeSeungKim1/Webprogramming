@@ -1,0 +1,75 @@
+03/17
+제너레이터와 async/await
+제너레이터
+
+async
+
+await
+
+=====================================
+html
+isArray - 특정한 오브젝트가 배열인지 체크(ES5 미지원시 instanceof)
+indexOf – 특정한 아이템의 위치를 찾을 때
+includes – 배열안에 특정한 아이템이 있는지 체크
+push - 배열 맨 뒤에 요소를 추가 (배열 자체를 수정하고 길이를 반환)
+unshift - 배열 맨 앞에 요소를 추가 (배열 자체를 수정하고 길이를 반환)
+pop - 배열 맨 뒤에 요소를 제거 (배열 자체를 수정하고 제거된 요소를반환)
+shift - 배열 맨 앞의 요소를 제거(배열 자체를 수정하고 제거된 요소를 반환)
+splice - 배열 특정 위치에 요소를 추가, 제거 (배열 자체를 수정하고 제거된요소를 배열 형태로 반환
+slice – 잘라진 새로운 배열을 만듬 (배열 자체는 유지하고새로운배열을 반환)
+concat – 여러개의 배열을 연결 (배열 자체는 유지하고 새로운배열을 반환)
+sort – 배열의 요소를 적절하게 정렬(원본 배열을 직접 변경하며정렬된 배열을 반환)
+reverse – 배열 요소의 순서를 거꾸로 배치 (배열 자체를 수정하고변경된 요소를 배열 형태로 반환)
+flat – 중첩 배열을 하나의 배열로 평탄화 (배열 자체는 유지하고새로운 배열을 반환)
+=========================================
+HTML 5
+ - 의미 요소 
+   <header>, <nav>, <main>, <section>, <aside>,<article>
+    <footer>,<figure>
+ - 멀티미디어 요소
+	video, audio
+ - 그래픽 요소
+	canvas, svg
+ - input 요소의 타입
+ 	number, date, time, calender, range
+
+멀티미디어
+ ->poster="/0317/image/r8.jpg">
+    controls로 재생할 수 있게 만들어주는 역할, loop는 반복 재생
+
+비디오 요소 속성
+ - control ( 재생 정지 및 소리의 조절)
+ - height 와 width  ( 크기 ) 
+ - autoplay ( 로드 될 때 비디오 재생 여부)
+ - loop ( 반복 재생)
+
+오디오 요소
+ - control
+ - autoplay
+ - loop
+ - preload ( 재생 전 파일의 내용을 모두 불러올지 설정)
+
+그래픽 요소
+ - Canvas 요소
+   ->그래픽을 위한 컨테이너 역할만을 수행
+   -> 웹 페이지에 그래픽을 그려주는 쉽고 강력한 방법
+ - svg 요소
+   -> canvas 요소로는 벡터 이미지를 표현 불가
+   -> 픽셀 기반인 웹 페이지에서 픽셀의 영향을 받지 않는 벡터 이미지를 표현 가능
+   -> 도표나 그래프 등 벡터 기반의 다이어그램 표현 효과적
+
+tool.strokeRect(10,10,250,130);//사각형 왼쪽 위 x,y,width,height /10-10 지점에 점을 찍고 상자 만들기
+tool.fillRect(20,20,250,130); /* -> 속이 꽉찬 사각형 
+tool.clearRect(30,30,100,100); /* -> 속이 빈 사각형 */
+
+ tool.moveTo(0,0);         /*   선그려주기 기능 */
+        tool.lineTo(300,150);
+        tool.lineTo(150,170);
+        tool.stroke();  -> 안에 있는 값 출력
+
+ tool.beginPath();
+        tool.moveTo(200,75);    
+        tool.arc(200,75,50,0,2*Math.PI/4); - 부채꼴모양의 그림 설정 
+        tool.closePath();
+        tool.stroke();
+
