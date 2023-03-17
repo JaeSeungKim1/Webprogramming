@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멀티미디어</title>
+</head>
+<body>
+    <h1>video</h1>
+    <video controls loop style="width:500px; height: 400px;"
+        poster="/0317/image/r8.jpg">
+        <!-- controls로 재생할 수 있게 만들어주는 역할, loop는 반복 재생 -->
+        <source src="./media/amuguna.mp4" type="video/mp4">
+        <source src="./media/good.mp4" type="video/mp4">
+        <track src="#" kind="subtitles" srclang="ko" label="한국어">
+        <track src="#" kind="subtitles" srclang="en" label="English">
+    </video>
+    <h1>audio</h1>
+    <audio controls loop autoplay>
+        <source src="/0317/media/1314.mp3" type="audio/mp3">
+        <source src="/0317/media/1315.mp3" type="audio/mp3">
+    </audio>
+    <br>
+    <object data="./media.PDFsample.pdf">미지원</object><br>
+    <object data="../0317/image/r8.jpg" width="200px" height="100px">미지원</object>
+    <object data="../0316/3.event.html">미지원</object><br>
+    <embed src="./media/PDFsample.pdf"><br>
+    <embed src="../0317/image/r8.jpg">
+</body>
+</html>

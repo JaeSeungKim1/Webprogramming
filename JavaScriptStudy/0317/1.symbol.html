@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol</title>
+</head>
+<body>
+    <pre>
+        원시타입(primitive data type)
+        number, string, undifined, boolean, null
+        Symbol
+        객체 타입(Object type)
+        Object
+        ===================================================
+        유일한 객체의 프로퍼티 키값을 만들기 위해서
+
+    </pre>
+    <script>
+        const s1=Symbol();
+        const s2=Symbol();
+        console.log(s1,s2,s1===s2);
+        const as1=Symbol('a');
+        const as2=Symbol('a');
+        console.log(as1,as2,as1===as2);
+        const s3=s1;
+        console.log(s1===s3);
+        const fs1=Symbol.for('uni');
+        const fs2=Symbol.for('uni');
+        console.log(fs1,fs2,fs1===fs2);
+
+        const obj=new Object();
+        obj.prop='myProp';
+        obj[123]=123;
+        obj['prop+123']=false;
+        console.log(obj);
+
+        const obj2={};
+        const mySym = Symbol('mine');
+        obj2[mySym]=123;
+        obj2.propkey='propValue';
+        console.log(obj2);
+        console.log(obj2[mySym]);
+        console.log(obj2.mySym);
+        console.log(mySym in obj2);
+        console.log(Object.keys(obj2));
+        console.log(Object.getOwnPropertySymbols(obj2));
+        console.log(Reflect.ownKeys(obj2));
+
+
+        const obj3 = new Object();
+        const strkey='id';
+        const strkey2='id';
+        function firstFunc(obj){obj[strkey]=0};
+        function secondFunc(obj){obj[strkey2]=2023};
+        firstFunc(obj3);
+        console.log(obj3);
+        secondFunc(obj3);
+        console.log(obj3);//덮어씌워진 것
+
+        const obj4=new Object();
+        const symkey=Symbol('key');
+        const symkey2=Symbol('key');
+        function firstFunc2(obj){obj[symkey]=0};
+        function secondFunc2(obj){obj[symkey2]=2023};
+        firstFunc2(obj4);
+        console.log(obj4);
+        secondFunc2(obj4);
+        console.log(obj4);
+
+        let sym = Symbol('key');
+        let obj5={
+            name:'property',
+            sym:123
+        }
+        console.log(obj5);
+
+        for(let item in obj){
+            console.log(item);
+        }
+        for(let item in obj2){
+            console.log(item);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation</title>
+</head>
+<body>
+    <script>
+        function init(){
+            console.log(window.navigator.geolocation);
+            window.navigator.geolocation.getCurrentPosition(current_position);
+        }
+        function current_position(position){
+            var latlng = new google.
+            console.log(position);
+            var msg;
+            msg=`Latitude:${position.coords.latitude}`;
+            msg+=`Longitude:${position.coords.longitude}`;
+            alert(msg);
+        }
+        window.addEventListener("load",init);
+    </script>
+</body>
+</html>

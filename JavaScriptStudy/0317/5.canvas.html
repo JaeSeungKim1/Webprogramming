@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+<body>
+    <h1>캔버스</h1>
+    <canvas id="drawCanvas" width="400px" height="250px"
+        style="border:1px solid black">
+        이 브라우저는 canvas 요소를 지원하지 않습니다.
+    </canvas>
+    <script>
+        let paper=document.getElementById('drawCanvas');
+        let tool=paper.getContext('2d');
+
+        tool.strokeRect(10,10,250,130);//사각형 왼쪽 위 x,y,width,height /10-10 지점에 점을 찍고 상자 만들기
+        tool.fillStyle="rgba(300,0,0,1)";
+        tool.fillRect(20,20,250,130); /* -> 속이 꽉찬 사각형 */
+        tool.clearRect(30,30,100,100); /* -> 속이 빈 사각형 */
+
+        tool.moveTo(0,0);         /*   선그려주기 기능 */
+        tool.lineTo(300,150);
+        tool.lineTo(150,170);
+        tool.stroke();
+
+        tool.beginPath();
+        tool.moveTo(200,75);    
+        tool.arc(200,75,50,0,2*Math.PI/4);     /*  부채꼴모양의 그림 설정 */
+        tool.closePath();
+        tool.stroke();
+
+        tool.font='40px Arial';
+        tool.fillText('CANvas',260,30);
+        tool.strokeText('Canvas', 260, 150);
+
+        let grd=tool.createLinearGradient(0,0,200,0);
+        grd.addColorStop(0,'yellow');
+        grd.addColorStop(1, 'black')
+        tool.fiilStyle=grd;
+        tool.font="40px Arial";
+        tool.fillText("Gradient",15,120);
+
+        let grd2=tool.createRadialGradient(150,150,20,150,150,200);
+        grd2.addColorStop(0,'red');
+        grd2.addColorStop(1, 'blue')
+        tool.fiilStyle=grd2;
+        tool.fillRect(10,150,200,100);
+
+    </script>
+    <br>
+    <canvas id="canvas" width="150px" height="150px"
+    style="border:1px solid black;">미지원</canvas>
+    <script>
+        function drawR() {
+            var canvas = document.getElementById('canvas');
+            if (canvas.getContext) {
+                var ctx = canvas.getContext('2d');
+
+
+                roundedRect(ctx, 12, 12, 150, 150, 15);
+                roundedRect(ctx, 19, 19, 150, 150, 9);
+                roundedRect(ctx, 53, 53, 49, 33, 10);
+                roundedRect(ctx, 53, 119, 49, 16, 6);
+                roundedRect(ctx, 135, 53, 49, 33, 10);
+                roundedRect(ctx, 135, 119, 25, 49, 10);
+
+
+                ctx.beginPath();
+                ctx.arc(37, 37, 13, Math.PI / 7, -Math.PI / 7, false);
+                ctx.lineTo(31, 37);
+                ctx.fill();
+
+
+                for (var i = 0; i < 8; i++) {
+                    ctx.fillRect(51 + i * 16, 35, 4, 4);
+                }
+
+
+                for (i = 0; i < 6; i++) {
+                    ctx.fillRect(115, 51 + i * 16, 4, 4);
+                }
+
+
+                for (i = 0; i < 8; i++) {
+                    ctx.fillRect(51 + i * 16, 99, 4, 4);
+                }
+
+
+                ctx.beginPath();
+                ctx.moveTo(83, 116);
+                ctx.lineTo(83, 102);
+                ctx.bezierCurveTo(83, 94, 89, 88, 97, 88);
+                ctx.bezierCurveTo(105, 88, 111, 94, 111, 102);
+                ctx.lineTo(111, 116);
+                ctx.lineTo(106.333, 111.333);
+                ctx.lineTo(101.666, 116);
+                ctx.lineTo(97, 111.333);
+                ctx.lineTo(92.333, 116);
+                ctx.lineTo(87.666, 111.333);
+                ctx.lineTo(83, 116);
+                ctx.fill();
+
+
+                ctx.fillStyle = 'white';
+                ctx.beginPath();
+                ctx.moveTo(91, 96);
+                ctx.bezierCurveTo(88, 96, 87, 99, 87, 101);
+                ctx.bezierCurveTo(87, 103, 88, 106, 91, 106);
+                ctx.bezierCurveTo(94, 106, 95, 103, 95, 101);
+                ctx.bezierCurveTo(95, 99, 94, 96, 91, 96);
+                ctx.moveTo(103, 96);
+                ctx.bezierCurveTo(100, 96, 99, 99, 99, 101);
+                ctx.bezierCurveTo(99, 103, 100, 106, 103, 106);
+                ctx.bezierCurveTo(106, 106, 107, 103, 107, 101);
+                ctx.bezierCurveTo(107, 99, 106, 96, 103, 96);
+                ctx.fill();
+
+
+                ctx.fillStyle = 'black';
+                ctx.beginPath();
+                ctx.arc(101, 102, 2, 0, Math.PI * 2, true);
+                ctx.fill();
+
+
+                ctx.beginPath();
+                ctx.arc(89, 102, 2, 0, Math.PI * 2, true);
+                ctx.fill();
+            }
+        }
+        function roundedRect(ctx, x, y, width, height, radius) {
+            ctx.beginPath();
+            ctx.moveTo(x, y + radius);
+            ctx.lineTo(x, y + height - radius);
+            ctx.arcTo(x, y + height, x + radius, y + height, radius);
+            ctx.lineTo(x + width - radius, y + height);
+            ctx.arcTo(x + width, y + height, x + width, y + height-radius, radius);
+            ctx.lineTo(x + width, y + radius);
+            ctx.arcTo(x + width, y, x + width - radius, y, radius);
+            ctx.lineTo(x + radius, y);
+            ctx.arcTo(x, y, x, y + radius, radius);
+            ctx.stroke();
+        }
+        drawR();
+    </script>
+    <br>
+    <img id="origin" src="../0317/media/r8.jpg"
+        alt="카카오" width="100px" height="100px">
+    <canvas id="copy" width="200px" height="200px"
+    style="border:1px solid black;">미지원</canvas>
+    <br>
+    <button onclick="draw();">따라그리기</button>
+    <script>
+        function draw(){
+            let paper1=document.getElementById('copy');
+            let tool1=paper1.getContext('2d');
+            let src=document.getElementById('origin');
+            tool1.drawImage(src,50,50,100,100);
+        }
+    </script>
+
+
+
+</body>
+</html>
