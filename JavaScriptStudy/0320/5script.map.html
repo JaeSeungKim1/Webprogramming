@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    <script>
+        let map = new Map();
+        map.set('1','str').set(1,'num').set(true,'bool');/* 짝을 지어서 들어가는 것  */
+        console.log(map);
+        console.log(map.get(1),map.get('1'),map.get(true));
+        console.log(map.size);
+        let map2=new Map([
+            ['사과',100],
+            ['감귤',200],
+            ['양파',300]
+        ]);
+        console.log(map2);
+        let obj={
+            사과:100,
+            감귤:200,
+            양파:300
+        }
+        let map3=new Map(Object.entries(obj));
+        console.log(map3,map3.get('사과'));
+        let obj2=Object.fromEntries(map3);
+        console.log(obj2);
+
+        for(let entry of map3){
+            console.log(entry); /* 개별개별의 결과값을 표현하는 것 */
+        }
+        console.log(map3.keys(),map3.values());
+        for(let key of map3.keys()){
+            console.log(key);
+        }
+        for(let value of map3.values()){
+            console.log(value);
+        }
+    </script>
+</body>
+</html>

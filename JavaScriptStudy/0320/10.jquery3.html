@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="js/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <ul>
+                    <li id="shift">0<input type="text" name="n0" value="0"></li>
+                    <li>1<input type="text" name="n1" value="1"></li>
+                    <li>2<input type="text" name="n2" value="2"></li>
+                    <li>3<input type="text" name="n3" value="3"></li>
+                    <li>4<input type="text" name="n4" value="4"></li>
+                    <li>5<input type="text" name="n5" value="5"></li>
+                    <li>6<input type="text" name="n6" value="6"></li>
+                    <li>7<input type="radio" name="radio" value="7"></li>
+                    <li>8<input type="radio" name="radio" value="8"></li>
+                    <li>9<input type="radio" name="radio" value="9"></li>
+                    <li>10<input type="checkbox" name="chk" value="10"></li>
+                    <li>11<input type="checkbox" name="chk" value="11"></li>
+                    <li>12<input type="checkbox" name="chk" value="12"></li>
+                    <li><h2>13</h2></li>
+                    <li lang="en-us">14 red, white and blue</li>
+                    <li lang="es-es">15 rojo amarillo y rojo</li>
+                    <li>16</li>
+                    <li id="shift">17</li>
+                </ul>
+            </td>
+            <td>
+                <button id="ex1">1 :animated</button><br>
+                <button id="ex2">2 :even</button><br>
+                <button id="ex3">3 :odd</button><br>
+                <button id="ex4">4 :focus</button><br>
+                <button id="ex5">5 :eq(1)</button><br>
+                <button id="ex6">6 :gt(6)</button><br>
+                <button id="ex7">7 :lt(4)</button><br>
+                <button id="ex8">8 :first</button><br>
+                <button id="ex9">9 :last</button><br>
+                <button id="ex10">10 :root</button><br>
+                <button id="ex11">11 :header</button><br>
+                <button id="ex12">12 :lang(en-us)</button><br>
+                <button id="ex13">13 :not(?)</button><br>
+            </td>
+        </tr>
+    </table>
+<script>
+    (function anima(){
+        $('#shift').slideToggle('slow',anima);  //칸이 움직이게 만들어주는 0번째 index값
+    })();
+    $(function(){
+        $('#ex1').click(function(){
+            $('*').css('background-color','white');
+            $("li:animated").css('background-color','pink');
+        });
+        $('#ex2').click(function(){
+            $('*').css('background-color','white');
+            $("li:even").css('background-color','pink');
+        });
+        $('#ex3').click(function(){
+            $('*').css('background-color','white');
+            $('li:odd').css('background-color','pink');
+        });
+        $('#ex4').click(function(){
+            $('*').css('background-color','white');
+            $('li:eq(4) input').focus();            //input이 띄어쓰여진 것은 자손선택자를 input하겟다는 의미
+            $(":focus").css('background-color','pink');
+        });
+        $('#ex5').click(function(){
+            $('*').css('background-color','white');
+            $("li:eq(1)").css('background-color','pink');   //eq = equal
+        });
+        $('#ex6').click(function(){
+            $('*').css('background-color','white');
+            $("li:gt(6)").css('background-color','pink');   //gt = great than?
+        });
+        $('#ex7').click(function(){
+            $('*').css('background-color','white');
+            $("li:lt(4)").css('background-color','pink');
+        });
+        $('#ex8').click(function(){
+            $('*').css('background-color','white');
+            $("li:first").css('background-color','pink');
+        });
+        $('#ex9').click(function(){
+            $('*').css('background-color','white');
+            $("li:last").css('background-color','pink');
+        });
+        $('#ex10').click(function(){
+            $('*').css('background-color','white');
+            $(":root").css('background-color','pink');  //html이기 때문에 테두리 바깥만
+        });
+        $('#ex11').click(function(){
+            $('*').css('background-color','white');
+            $(":header").css('background-color','pink');    //:header은 헤딩의 역할을 함
+        });
+        $('#ex12').click(function(){
+            $('*').css('background-color','white');
+            $("li:lang(en-us)").css('background-color','pink'); //영어로 되있는 애들만 고르겟다
+        });
+        $('#ex13').click(function(){
+            $('*').css('background-color','white');
+            $("input:not(:eq(3))").css('background-color','pink');  //eq3번째에 해당하지 않는 나머지
+        });
+    })
+</script>
+    <p>mouse multi event :on</p>
+<script>
+    $(function(){
+        $('p').on({
+            mouseenter:function(){
+                $(this).css('background-color','lightgray');
+            },
+            mouseleave:function(){
+                $(this).css('background-color','lightblue');
+            },
+            click:function(){
+                $(this).css('background-color','yellow');
+            }
+        })
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

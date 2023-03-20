@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Maintain</title>
+</head>
+<body>
+    <textarea id="area" style="width:200px;height: 60px;"
+        placeholder="작성 내용 자동 기록"></textarea>
+    <br>
+    <button onclick="clearStorage()">기록 삭제</button>
+    <button id="show" type="button">보여주기</button>
+    <script>
+        let area = document.getElementById('area');
+        console.dir(area);
+        area.value=localStorage.getItem('area');
+        area.oninput=event=>{
+            console.log(event);
+            localStorage.setItem('area',)
+        }
+    </script>
+</body>
+</html>

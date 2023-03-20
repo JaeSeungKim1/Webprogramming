@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.4.js"></script>
+    <style>
+        div{border:1px solid black;width: 50px;height: 50px;float: left;margin: 5px;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3<span>tags</span></li>  
+    </ul>
+    <ul></ul>
+    <div>A</div>
+    <div class="mid">B</div>
+    <div class="mid not">C</div>
+    <div class="mid not">D</div>
+    <div class="mid">E</div>
+    <div>F</div>
+    <script>
+        $('div').not('.not').css('color','red'); /* not이 붙어있는 C,D 빼고 색을 바꾸겟다 */
+        //$('li:nth-child(1)').css('color','red');
+        $('li').first().css('color','red');
+        $('li').last().css('color','purple');
+        $('li').eq(1).css('color','blue');      /* 2번째부터 파란색을 표시 */
+        $('li').filter(':nth-child(2)').css('color','lightgreen');  //2번째 열 연한 그린
+        $('li').filter(function(index){
+            return $(this).find('span').length===1; //span의 개수가 1개인 리스트를 찾는 것(true)가 나올것이고 그것만
+        }).css('color','black');                //3번째 tag색을 검은색으로
+        $('div').css('background','skyblue').filter('.mid').css('border','3px dotted blue');
+        //BCDE의 상자 테두리를 점선으로해서 표시하겟다
+        $('ul:has(li)').addClass('inyes');
+        $('ul').has('li').addClass('yes');
+        $('ul').click(function(event){  //event 발생시킴 클릭을 한 요소
+            let target=$(event.target);
+            if(target.is('li')){
+                target.css('background-color','orange');    //list에 잇는 속성을 클릭했을 때 주황색으로
+            }
+        });
+    </script>
+        <form>
+            <fieldset>
+                <label>이름</label>
+                <input type="text" name="name" value=""/>
+                <lavel>암호:</lavel>
+                <input type="password" name="pw" value=""/>
+                <lavel>이메일:</lavel>
+                <input type="email" name="eamil" value=""/>
+            </fieldset>
+        </form>
+        <button type="button" id="print">출력</button>
+        <b>값 출력:</b><p></p>
+        <script>
+            console.log($('input'));
+            let temp=$('input').map(function(index,ele){
+                console.log(index,ele)
+                return $(this).val();
+            });
+            console.log(temp,temp.get());       //결과 값출력을 할 수 있게 도와주는 것
+            $('#print').click(()=>{ 
+                //$('p').empty(); //앞에 p태그가 같은거여서
+                $('p').empty().append(  /* 이렇게 chaining을 할 수도 있다 */
+                    $('input').map(function(index,ele){
+                        return $(this).val();
+                    }).get().join()            //get을 문자형으로 바꾸는 함수는 join
+                );
+            });
+            console.log($('div'));
+            $('div').slice(2,4).css('background-color','pink');
+            $('div').slice(-2,-1).css('background-color','gray');    //음수값이 나오면 뒤에서 부터 -2까지
+        </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animate</title>
+    <style>
+        div{position:absolute;background-color: lightsalmon;
+        left:0px;top:30px;width: 60px;height: 60px;margin: 5px;}
+    </style>
+    <script src="js/jquery-3.6.4.js"></script>
+</head>
+<body>
+    <div class="block"></div>
+    <button id="go">Go</button>
+    <button id="stop">STOP</button>
+    <button id="back">BACK</button>
+    <script>
+        $('#go').click(()=>{
+            $('.block').animate({left:"+=100px",opacity:"0.4"},"slow");
+            $('.block').animate({top:"+=100px",opacity:"0.8"},"slow");
+        });
+        $('#stop').click(()=>{
+            $('.block').stop();
+        })
+        $('#back').click(()=>{
+            $('.block').animate({left:'-=100px',opacity:"1"},2000);
+        })
+    </script>
+        <button id="hide">hide</button>
+        <p>paragraph</p>
+    <script>
+        $('#hide').click(function(){
+            $('p').hide('slow',function(){
+            alert('paragraph is hidden');
+            })
+        })
+    </script>
+    <button id="chain">click</button>
+    <p id="p2">paragraph</p>
+    <script>
+        $('#chain').click(()=>{
+            $('#p2').css('color','orange').slideUp(1000).slideDown(2000);
+        })
+    </script>
+</body>
+</html>

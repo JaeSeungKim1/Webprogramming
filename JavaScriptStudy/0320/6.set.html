@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set</title>
+</head>
+<body>
+    <script>
+        let set =  new Set(); //중복 허용 x 그래서 set 안에는 4개만 들어오는 것을 볼 수 있음
+        let hong = {name:'홍길동'};
+        let you = {name:'유관순'};
+        let lee = {name:'이순신'};
+        let go = {name:'고길동'};
+        set.add(hong);
+        set.add(go);
+        set.add(lee);
+        set.add(you);
+        set.add(lee);
+        set.add(go);
+        console.log(set,set.size);
+        for(let hero of set){
+            console.log(hero.name); //객체 안에 있는 이름을 찍겟다는 의미
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" , content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage</title>
+</head>
+
+<body>
+    <h1>session storage</h1>
+    <div id="counter"></div>
+    <p>
+        <button onclick="clickCounter()" type="button">
+            count
+        </button>
+    </p>
+    <script>
+        function clickCounter() {
+            let counter = document.getElementById('counter');
+            if (typeof (Storage) !== "undefined") {
+                if (sessionStorage.clickCounter) {
+                    sessionStorage.clickCounter = Number(sessionStorage.clickCounter) + 1;
+                }
+                else {
+                    sessionStorage.clickCounter = 1;
+                }
+                counter.innerHTML = `현재 카운트:${sessionStorage.clickCounter}`;
+            }
+            else {
+                counter.innerHTML = 'Web Storage  API 미지원';
+            }
+        }
+    </script>
+    <h1>local storage</h1>
+    <div id="counter2"></div>
+    <p>
+        <button onclick="clickCounter2()" type="button">
+            count
+        </button>
+    </p>
+    <script>
+        function clickCounter2() {
+            let counter2 = document.getElementById('counter2');
+            if (typeof (Storage) !== "undefined") {
+                if (localStorage.clickCounter) {
+                    localStorage.clickCounter = Number(localStorage.clickCounter) + 1;
+                }
+                else {
+                    localStorage.clickCounter = 1;
+                }
+                counter2.innerHTML = `현재 카운트:${localStorage.clickCounter}`;
+            }
+            else {
+                counter2.innerHTML = 'Web Storage  API 미지원';
+            }
+        }
+    </script>
+    <p>
+        <button id="sec" type="button">session clear</button>
+        <button id="loc" type="button">local clear</button>
+    </p>
+    <br>
+    <p>
+        <button id="setS" type="button">session set</button>
+        <button id="setL" type="button">local set</button>
+    </p>
+    <p id="getS"></p>
+    <br>
+    <p id="getL"></p>
+    <script>
+        let sec=document.getElementById('sec');
+        let loc=document.getElementById('loc');
+        sec.onclick=()=>sessionStorage.clear();
+        loc.onclick=()=>localStorage.clear();
+        let ss=document.getElementById('setS');
+        let sl=document.getElementById('setL');
+        ss.onclick=()=>{
+            sessionStorage.setItem('test','session set');
+            document.getElementById('getS').innerText = sessionStorage.getItem('test');
+        };
+        sl.onclick=()=>{
+            localStorage.setItem('test','local set');
+            document.getElementById('getL').innerText = localStorage.getItem('test');
+        };
+        console.log(sessionStorage,sessionStorage.length);
+        console.log(localStorage,localStorage.length);
+        sessionStorage.removeItem('test');
+        localStorage.removeItem('test');
+        console.log(sessionStorage,sessionStorage.length);
+        console.log(localStorage,localStorage.length);
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible", content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        div{border:1px solid black;margin:20px;}
+        span{display: block;}
+        .bg-blue{background-color: blue;}
+    </style>
+</head>
+<body>
+    <div>
+        <span>div0-span0</span>
+        <span>div0-span1</span>
+        <span>div0-span2</span>
+        <span>div0-span3</span>
+    </div>
+    <div>
+        <span>div1-span0</span>
+        <span>div1-span1</span>
+        <span>div1-span2</span>
+        <span>div1-span3</span>
+    </div>
+    <div>
+        <p>div2-p0</p>
+        <span>div2-span0</span>
+        <span>div2-span1</span>
+        <span>div2-span2</span>
+    </div>
+    <div>
+        <span>div3-span0</span>
+        <span>div3-span1</span>
+        <span>div3-span2</span>
+        <p>div3-p0</p>
+    </div>
+    <div>
+        <button type="button" id="btn1">toggleClass</button>
+        <button type="button" id="btn2">toggle</button>
+        <button type="button" id="btn3">fadetoggle</button>
+        <button type="button" id="btn4">slidetoggle</button>
+    </div>
+<script>
+    $(function(){
+        $('div span:first-child').addClass('bg-blue');
+        $('div span:last-child').css('background','red');
+        $('div span:first-of-type').hide();
+        $('div span:first-of-type').show();
+        //$('div span:last-of-type').hide('slow',()=>console.log('wow'));
+        $('div span:nth-child(2)').fadeOut(2000);
+        $('div span:nth-child(2)').fadeIn(2000);
+        $('div span:nth-last-child(2)').fadeTo('slow',0.4);
+        $('div span:nth-of-type(2)').slideUp();
+        $('div span:nth-of-type(2)').slideDown();
+        $('div span:first-child').removeClass('bg-blue');//파란색으로 보이는 줄 없애주는 기능
+
+        $('#btn1').on('click',()=>
+            $('div span:first-of-type').toggleClass('bg-blue'));    //
+        $('#btn2').on('click',()=>
+            $('div span:first-of-type').toggle()); 
+    })
+        $('#btn3').on('click',()=>{
+            $('div span:nth-child(2)').fadeToggle(1000);
+        })
+        $('#btn4').click(()=>{
+            $('div span:nth-last-type(2)').slideToggle();
+        })
+              
+</script>
+</body>
+</html>

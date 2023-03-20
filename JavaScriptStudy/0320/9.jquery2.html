@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        //document.onload(function(){});
+        //$(document).ready(function(){});   위 3개 같은 의미
+        $(function(){
+      //      document.getElementById('ex1')
+      //          .addEventListener('click',function(){})
+      // | * ~ $ ^ *=
+      
+            $('#ex1').click(function(){     
+                $('*').css('background-color','white');
+                $('[name|=seoul]').css('background-color','pink');
+            });
+            $('#ex2').on('click',function(){    //해당 단어 포함하고 있는 경우
+                $('*').css('background-color','white');
+                $('[name*=seoul]').css('background-color','pink');
+            });
+            $('#ex3').on('click',function(){ //띄어쓰기 되어있으면 
+                $('*').css('background-color','white');0
+                $('[name~=seoul]').css('background-color','pink');
+            });
+            $('#ex4').on('click',function(){ //해당 문자열로 끝나는 경우
+                $('*').css('background-color','white');
+                $('[name$=seoul]').css('background-color','pink');
+            });
+            $('#ex5').on('click',function(){
+                $('*').css('background-color','white');
+                $('[name=seoul]').css('background-color','pink');
+            });
+            $('#ex6').on('click',function(){ //정답 아닌 경우
+                $('*').css('background-color','white');
+                $('[name!=seoul]').css('background-color','pink');
+            });
+            $('#ex7').on('click',function(){
+                $('*').css('background-color','white');
+                $('[name^=seoul]').css('background-color','pink');
+            });
+            $('#ex8').on('click',function(){
+                $('*').css('background-color','white');
+                $('[name]').css('background-color','pink');
+            });
+            $('#ex9').on('click',function(){        //id를 가지고 있는 속성값을 찾아줘
+                $('*').css('background-color','white');
+                $('[id][name*=seoul]').css('background-color','pink');
+            });
+        });
+    </script>
+</head>
+    <table>
+        <tr>
+            <td>
+                <input name="seoul" id="seoul" value="seoul"><br>
+                <input name="pre-seoul" value="pre-seoul"><br>
+                <input name="seoul-sub" value="seoul-sub"><br>
+                <input name="pre-seoul-sub" value="pre-seoul-sub"><br>
+                <input name="pre seoul" value="pre seoul"><br>
+                <input name="seoul sub" value="seoul sub"><br>
+                <input name="pre seoul sub" value="pre seoul sub"><br>
+                <input name="seoul2" value="seoul2"><br>
+                <input name="pre-seoul2" value="pre-seoul2"><br>
+                <input name="seoul2-sub" value="seoul2-sub"><br>
+                <input name="pre-seoul-sub" value="pre-seoul2-sub"><br>
+                <input name="tokyo-sub" value="tokyo-sub"><br>
+            </td>
+            <td>
+                <button id="ex1">1[attribute|=value]</button><br>
+                <button id="ex2">2[attribute*=value]</button><br>
+                <button id="ex3">3[attribute~=value]</button><br>
+                <button id="ex4">4[attribute$=value]</button><br>
+                <button id="ex5">5[attribute=value]</button><br>
+                <button id="ex6">6[attribute!=value]</button><br>
+                <button id="ex7">7[attribute^=value]</button><br>
+                <button id="ex8">8[attribute]</button><br>
+                <button id="ex9">9[id][attribute*=value]</button><br>
+            </td>
+        </tr>
+    </table>
+<body>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

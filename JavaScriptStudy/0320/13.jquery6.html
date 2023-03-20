@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="js/jquery-3.6.4.js"></script>
+    <script>
+        $(function(){
+            $('#append').append('wow');
+            /* $('#append').append($('#prac')); */
+            $('#append').append($('#prac').text());
+            $('#prepend').append($('#prac').html());
+            $('#append').text('우리집<b>너희집</b>');
+            $('#prepend').html('우리집<b>너희집</b>');
+            $('button').click(()=>{
+                $('span').text($('#input').val());
+                $('#input').val('123');
+            });
+            $('#btn1').click(()=>{
+                $('ol').prepend("<li>prepend item</li>");    //앞에 붙여준다는 의미(prepend가)
+            })
+            $('#btn2').click(()=>{
+                $('ol').append("<li>append item</li>");     //append는 제일 뒤에 붙여주겠다는 의미
+        })
+            $('#btn3').click(()=>{  
+                $('ol').before("<strong>Before</strong>"); 
+            });
+            $('#btn4').click(()=>{
+                $('ol').after("<i>After</i>")
+            }); 
+            $('#btn5').click(()=>{
+                $('#div').empty();          //div 는 남아 안에 있는 요소만 날라가게 함
+            });
+             $('#btn6').click(()=>{
+               // $('#div').remove();         //div 박스와 안에 내용 다 삭제
+               $('p').remove('.target');       //target만 없애고자 할때
+             })
+    })    
+    </script>
+</head>
+<body>
+    <p id="prac">이것은 <mark>맛있는</mark><b>왕</b>뚜껑</p><br>
+    <p id="append">여기는 수업중</p><br>
+    <p id="prepend">여기는 수업중</p><br>
+    <p>Name:<input type="text" id="input" value="수업중"></p><br>
+    <button>값</button><span></span>
+    <br><br>
+    <ol>
+        <li>List item1</li>
+        <li>List item2</li>
+        <li>List item3</li>
+    </ol>
+    <button id="btn1">prepend</button>
+    <button id="btn2">append</button>
+    <button id="btn3">before</button>
+    <button id="btn4">after</button>
+    <br>
+    <div id="div" style="height:100px;width:300px;border:1px solid black;">
+        div 내부의 문장들
+        <p class="target">내부 문장1</p>
+        <p>내부 문장2</p>
+    </div>
+    <button id="btn5">empty</button>
+    <button id="btn6">remove</button>
+
+
+
+</body>
+</html>

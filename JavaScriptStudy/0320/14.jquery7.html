@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="js/jquery-3.6.4.js"></script>
+    <style>
+        .resizable {
+            resize: both;
+            overflow: scroll;
+            border: 1px solid black;
+        }
+        div {height: 300px;width: 300px;}
+        p {height: 200px; width: 200px;}
+    </style>
+    <script>
+        $(function(){
+            $('button').click(()=>{
+                txt = "";
+                txt += "Width of div: " + $(".resizable").width() + "</br>";
+                txt += "innerWidth of div: " + $(".resizable").innerWidth() + "</br>";
+                txt += "outerWidth of div: " + $(".resizable").outerWidth() + "</br>";
+                txt += "Height of div: " + $(".resizable").height() + "</br>";
+                txt += "innerHeight of div: " + $(".resizable").innerHeight() + "</br>";
+                txt += "outerHeight of div: " + $(".resizable").outerHeight();
+                $(".resizable").html(txt);
+            })
+        });
+    </script>
+</head>
+<body>
+    <button>div 크기보기</button>
+    <div class="resizable">
+        <p class="rsizable">
+            이문장은 사이즈 변경이 가능한 div요소 내에 있습니다.
+        </p>
+    </div>
+</body>
+</html>
+
+
+
+

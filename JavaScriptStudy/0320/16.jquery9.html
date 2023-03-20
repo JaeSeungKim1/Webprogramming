@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.4.js"></script>
+
+</head>
+<body>
+    <p>안녕하세요.</p>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li class="here">3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <p id="ifr">안녕하세요
+        <a href="http://www.naver.com">네이버</a>
+        입니다.
+    </p>
+    <div>세 개의</div><div>div 요소를</div><div>순회합니다.</div>
+    <button id="btn">Loop</button>
+    <ul class="first">
+        <li class="ff">1</li>
+        <li>2</li>
+        <li class="fl">3</li>
+    </ul>
+    <script>
+        $(function(){
+            //append appendTo   A.append(K) K.appendTo(A)
+            //prepend prependTo
+            let temp=$('p').clone().add('<p>잘가</p>'); //clone 복제 복제해서 2개의 문구로 표현하게 해줌
+            console.log(temp);
+            //$('body').append(temp); //p영영에 잇는 필드가 아래로 빠져버림
+            temp.appendTo(document.body);   //append는 앞에 대상은 뒤에
+            //$('body').prepend(temp);
+            temp.prependTo($('body'));
+            $('ul').find('.here').addBack().css('border','1px solid black');   //ul과 here에 border를 같이 넣겟다
+        })                                              //addBack은 앞에 얘까지 해서 더해서 결과를 출력하겟다
+            console.log($('#ifr').contents());
+    </script>
+</body>
+</html>

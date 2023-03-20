@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<body>
+    <script>
+        //setTimeout(callbackfunction(cbf),time),    setInterval(cbf(), time)
+        const timeoutId = setTimeout(()=>{
+            console.log('setTimeout 2sec');
+        },2000);
+        const intervalId = setInterval(()=>{
+            console.log('print per 3sec');
+        },3000);
+        clearTimeout(timeoutId);    //timeoutId를 끝내겟다
+        clearInterval(intervalId);
+        const func = function(){
+            console.log('wow');
+        }
+        func();
+        console.log(func);
+        setTimeout(func,0);
+        setTimeout(e=>func(e),3)
+        setTimeout(()=> console.log('hello'),0);
+        console.log('world');
+
+        //json(JavaScript Object Notation) //데이터 교환 포멧?
+        /*
+            {
+                "key":"value",
+                "arr":[1,2,3],
+                "nullProp":null
+            } 
+         */
+        let js = JSON.stringify({   //뭉탱이로 나오는데
+            "key":"value",
+            "arr":[1,2,3],
+            "nullProp":null
+        });
+        console.log(js);        //ajax에서 많이 사용하고 중요
+        let jp=JSON.parse(js);
+        console.log(jp);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="js/jquery-3.6.4.js"></script>
+    <style>
+        div{width:50px;height: 40px;margin: 5px;float: left;
+            border: 3px outset green;}
+            .starthidden{display:none;}
+    </style>
+    <script> 
+        // window.onload <- 이게 있어야 제대로 적용됌
+        $(function(){       //아래 주석처리한 것이랑 같은 의미
+        //$(document).ready(function(){
+            console.log('jquery');
+            $("div:visible").click(function(){
+                $(this).css("backgroud","yellow");
+            })
+            $('button').click(function(){
+                $('div:hidden').show('fast');   //보이지 않는것을 보이게 show를 사용해서 표현
+            })
+        });
+    </script>
+</head>
+<body>
+    <button>show hidden</button>
+    <div></div>
+    <div class="starthidden"></div>
+    <div></div>
+    <div></div>
+    <div style="display:none;"></div>
+</body>
+</html>
