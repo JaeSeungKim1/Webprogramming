@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        span{display: none;}
+        p{color: blue;}
+        div{color: red;}
+    </style>
+</head>
+<body>
+    <form>
+        <p>
+            <input type="text" id="target"/>
+            <span>발생</span>
+        </p>
+        <p>
+            <input type="password"/>
+            <span>발생</span>
+        </p>
+            <input type="text"/>
+            <input class="target" type="text"/>
+            <br><br><br>
+            <select name="fruit" class="target" multiple="multiple">
+                <option value="banana">바나나</option>
+                <option value="apple">사과</option>
+                <option value="melon">메론</option>
+                <option value="orange" selected>오렌지</option>
+                <option value="berry">딸기</option>
+                <option value="pear">배</option>
+            </select>
+        </p>
+    </form>
+    <div id="res1"></div>
+    <div id="res2"></div>
+<script>
+    $(function(){
+       /*  $('#target').on('blur',function(){
+            $('#res2').append('event');
+        }) */
+        $('#target').on({
+            blur:function(){
+                $('#res2').html('blur event');
+            },    
+            focus:function(){
+                $('#res2').html('gocus event');
+            }
+        });
+        $('input').focus(function(){
+            $(this).next('span').css('display','inline').fadeOut(2000);
+        });
+        $('.target').change(function(){
+            $('#res2').html('change event');
+            let str = '';
+            $('select option:selected').each(function(){
+                str+=$(this).text()+' ';
+            });
+            $('#res1').html(str).show();
+        });
+        $('input').select(function(){
+            $('#res2').html('select event');
+        })
+    })
+</script>
+</body>
+</html>
