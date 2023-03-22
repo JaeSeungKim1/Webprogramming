@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <div>
+        저장된 값은 <span></span>그리고<span></span>
+    </div>
+    <script>
+        $('div').data('exam',{number:100,fruit:'apple'});
+        $('div').data('exam2','value2')
+
+        $('span').first().text($('div').data('exam').number);
+        $('span').last().text($('div').data('exam').fruit); //property 값을 받아서 apple을 출력
+        $('div').append($('div').data('exam2'))
+            .removeData('exam2').append($('div').data('exam2'));    //내용이 없어 추가로 출력 안됨
+    </script>
+</body>
+</html>

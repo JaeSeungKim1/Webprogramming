@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <ul class="lvl1">
+        <li class="i1">I</li>
+        <li class="i2">II
+            <ul class="lvl2">
+                <li class="ia">A</li>
+                <li class="ib">B
+                    <ul class="lvl3">
+                        <li class="ix">x</li>
+                        <li class="iy">y</li>
+                        <li class="iz">z</li>
+                    </ul>
+                </li>
+                <li class="ic">C</li>
+            </ul>
+        </li>
+        <li class="i3">III</li>
+    </ul>
+    <script>
+        //조상 자손 관계
+        //parent() parents() parentUntil()
+        //find() children()
+        //$('ul.lvl2').children().css('background-color','red');
+        $('li.ia').parent('ul').css('background-color','green');
+        console.log($('li.ix').parents(),$('li.ia').parent('ul'));
+        console.log($('ul.lvl2').children());
+       // $('li.i2').find('li').css('background','violet');
+        console.log($('li.i2').find('li'));
+        //$('.ix').parentsUntil('.lvl1').css('color','red');
+        console.log($('.ix').parentsUntil('.lvl1'));
+        
+        //근접 관계
+        //$('li.ia').closest('ul').css('background','blue');
+        console.log($('li.ia').closest('ul'));
+        $('.ia').next().css('background','red');
+        $('.ia').nextAll().css('background','yellow');
+        console.log($('.ia').next(),$('.ia').nextAll());
+    </script>
+</body>
+</html>

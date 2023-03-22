@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+   /*      $("button[name='add']").on("click", function () {
+         $("menu22").append("<button name='add'>+</button>");
+}); */      
+    </script>
+    <style>
+        p{margin: 3px;font-size: 20px;font-weight: bold;}
+    </style>
+</head>
+<body>
+    <!-- <h2>오늘 점심은 뭘 먹었나요?</h2>
+    <div>
+    <input type="radio" name="menu" value="한식" checked>한식<br>
+    <input type="radio" name="menu" value="중식" checked>중식<br>
+    <input type="radio" name="menu" value="일식" checked>일식<br>
+    <input type="radio" name="menu" value="양식" checked>양식<br>
+    </div>
+    <div class="menu22">
+        <h3>한식</h3>
+        <h3>중식</h3>
+        <h3>일식</h3>
+        <h3>양식</h3>
+    </div> -->
+    <h2>오늘 점심은 뭘 먹었나요?</h2>
+    <input type="radio" class="vote" name="menu" >한식<br>
+    <input type="radio" class="vote" name="menu" >일식<br>
+    <input type="radio" class="vote" name="menu" >양식<br>
+    <input type="radio" class="vote" name="menu" >중식<br>
+    <p>한식</p>
+    <p>중식</p>
+    <p>일식</p>
+    <p>양식</p>
+
+    <h2>오늘 점심은 뭘 먹었나요?</h2>
+    <p class="menu2">한식</p>
+    <p class="menu2">중식</p>
+    <p class="menu2">일식</p>
+    <p class="menu2">양식</p>
+    <script>
+        $('.vote').click(function(){
+            $(this).append('■');
+        });
+    </script>
+</body>
+</html> 
