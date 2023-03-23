@@ -1,0 +1,11 @@
+.hidden{
+    display:none;
+}
+#clock{
+    font-size: 5em;
+}
+body{
+    display: flex;
+    align-items: center;
+    color: white;
+}

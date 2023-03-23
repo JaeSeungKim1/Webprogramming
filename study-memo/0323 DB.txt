@@ -1,0 +1,159 @@
+03/23
+o DB ( DataBase )
+ -> 통합하여 관리되는 데이터의 집합체
+ -> 데이터베이스를 관리하는 미들웨어를 데이터베이스 관리 시스템
+ -> 데이터베이스를 운영하고 관리하는 소프트웨어
+	(DBMS)
+
+o DDL(CRUD) = (Data Deficition Language)
+ - 데이터베이스를 정의하는 언어
+ - 데이터를 생성, 수정, 삭제 등 데이터의 전체 구조를 결정하는 역할의 언어
+Create		React		(CRUD)
+Update		Delete
+
+o DML(INPUT, UPDATE, DELETE, `SELECT 등)
+ -> 저장된 데이터 처리, 조회, 검색하기 위한 것
+o DCL(GRANT, REVOKE) = (권한 부여, 박탈)
+ -> 데이터의 보안성 및 무결성 등을 제어하기 위한 명령어
+
+o TCL
+ -> RollBack
+ -> Commit
+
+o 관계형 데이터베이스(relational database) = RDBMS
+ - 테이블로 이루어져있고 키와 값을 가짐
+ - 데이터의 종속성을 관계로 표현
+o 특징
+ -> 데이터 분류, 정렬, 탐색 속도 빠름
+ -> 신뢰성 높고, 데이터의 무결성을 보장
+ -> 기존 작성된 스키마를 수정하기 어렵
+ -> 데이터베이스의 부하를 분석하는 것이 어렵
+
+Table
+o 열(Column)
+ -> 유일한 이름을 가지고 있으며 자신만의 타입을 가짐
+ -> 필드 or 속성
+o 행(Row)
+ -> 데이터 묶음 의비, 모든 행은 같은 수의 열을 가짐
+ -> 튜플 or 레코드
+
+o 정규화
+ -> 이상 현상이 
+제 1정규형
+ 제 2정규형(2NF)
+   ->
+이상 현상 3가지
+삭제이상 
+삽입이상
+갱신이상 
+
+o 데이터 모델
+ -> 현실 세계의 정보들을 단순화, 추상화 하여 체계적으로 표현
+ -> 데이터, 데이터의 관계, 의미 및 일관성, 제약조건 등
+   개념적 데이터 모델
+	-> 인간이 이해할 수 있는 정보구조로 표현 
+	-> E-R 모델
+   논리적 데이터 모델
+	-> 개념적 구조를 컴퓨터로 처리
+
+o 데이터 모델리의 순서
+ - 업무 파악/요구사항 분석
+ - 개념적 데이터 모델링
+ - 논리적 데이터 모델링
+ - 
+
+o 개념적 데이터 모델링
+ - ERD(Entity Relation Diagram)
+ - 그 그림을 봤을 때 필요한 정보가 뭐겟다라고 유추하는 것
+o 논리적 데이터 모델링
+ - 
+o 물리적 데이터 모델링
+
+개념적 -> 논리적 -> 물리적으로 이루어짐
+
+o ERD
+ - 
+
+o Entity
+ - 정의 가능한 사물 또는 개념(id, name, 마지막 업데이트 등)
+ -  설계 시 테이블로 정의
+ - 속성
+	) 엔티티의 포함된 속성
+
+o 엔티티의 종류
+ - 유형, 무형, 문서, 이력(로그인 정보), 코드 엔티티(상품 바코드)
+
+o 기호의 종류
+  - 실선과 실선(정확히 1:1)
+  - 까마귀발(1:다수)
+  - 실선과 까마귀발(1개 이상?)
+
+o 데이블 정보
+ - 테이블 명
+ - 데이블 설명
+ - 컬럼명
+ - 제약조건
+  -> ***PRIMARY KEY 아래 두가지를 같이 가질 수 있는 유일한 키
+  -> UNIQUE       중복된 값이 있으면 안된다는 것
+  -> NOT NULL    값이 NULL값이면 안된다?
+  -> ***Foreign Key(F Key)  다른 테이블에 있는 것과 기본키를 연결하는 키
+  -> Candidate Key(후보키)
+
+o Data type
+***VARCHAR2(n) - 가변길이 문자 /최대 4000바이트/ 디폴트 1
+CHAR(n)
+NCHAR(n)
+NVARCHAR(n)
+LONG
+CLOB
+NCLOB
+
+O 타입 정보 불러오는 것
+ - DESC
+
+o 테이블 삭제
+ - DROP
+ - TRUNCATE
+o 테이블 수정
+ - ALTER
+
+DESC EMP_DDL; 결과창 바로 출력하기 DESC
+
+반정규화
+사용자의 편의를 위해 정규화의 일부를 위반하는 행위
+
+CREATE
+
+create table 테이블명(
+   속성명 타입(크기),
+   ....
+);
+
+create table 테이블명 as select 문
+
+
+alter table 테이블명 ⓐ
+
+ⓐ
+add (칼럼) (데이터 타입)
+drop (칼럼) (데이터 타입) -- 
+modify (칼럼) (데이터 타입) --타입 갱신
+rename (칼럼) (기존 값) to (갱신할 값) 
+
+
+drop table (테이블명);
+
+truncate table (테이블명);
+
+
+
++)
+comment on table (테이블명) is (메모할 것);
+comment on column (칼럼명) is (메모할 것);
+
+
+select * or (칼럼명) from (테이블명) where (조건) group by.... order by...
+
+
+constraint 제약 조건(create table 시 각 칼럼 뒤에 작성)
+not null/unique/primary key/foreign key/check/default
