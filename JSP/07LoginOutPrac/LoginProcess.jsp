@@ -10,6 +10,7 @@
 	String oracleUrl = application.getInitParameter("OracleUrl"); 
 	String oracleId = application.getInitParameter("OracleId");
 	String oraclePw = application.getInitParameter("OraclePw");
+	
 	MemberDAO dao = new MemberDAO(oracleDriver,oracleUrl,oracleId,oraclePw);
 	MemberDTO memberDTO = dao.getMember(userId, userPw);
 	dao.close();
