@@ -1,0 +1,6 @@
+Servlet 작성 규칙
+
+import javax.servlet 내용 포함
+public
+httpServlet 상속
+doGet 또는 doPost 반드시 오버라이딩
