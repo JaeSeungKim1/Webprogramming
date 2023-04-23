@@ -53,4 +53,5 @@ if(saveToDos!==null){
     const parsedToDos=JSON.parse(saveToDos);
     toDos=parsedToDos;
     parsedToDos.forEach(printToDo);
+    
 }
