@@ -1,0 +1,49 @@
+ 궁금한 사항
+단일 문자 char형(' ') -> 유니코드문자 표현?
+문자열은 String(" ") -> 클래스 개념
+정수 자료형
+byte, short, int, long
+
+ctrl+A(전체 선택)
+
+변수명(=변수 식별자)
+if~ else~/switch
+while/do/for
+break/continue
+void(반환돼지 않는다?)
+println/print 차이
+-> ln이 줄 바꾸기 기능
+or \n으로도 가능
+prinf(글자 읽어내는 기능)
+
+자바 별찍기
+
+w3schools.com
+tcpschool.com
+
+OPP의 특징
+객체(부품)/클래스(설계도)/
+getter, setter(캡슐화)
+
+setter
+void set year(int year) -> 내가 원하는 연도를 넣기 위해 
+
+다형성
+같은 명령을 내려도 다른 것으로 표현할 수 있음.
+오버로딩, 오버라이딩(중요)
+오버로딩 - 매개 변수 유형, 수, 순서
+	     반환되는 값은 무관
+	ex)plusMethod(int x, int y)
+	   plusMethod(double x, double y)
+ -> 똑같이 플러스메소드가 있는만 안에 다른 매개체로 인해 다른 값
+
+this -> 생성된 인스턴스 스스로 가르키는 예약어(나 자신을 부를 경우)
+super -> 부모의 기능을 물려받은걸 사용하기 위해서 나타냄(Generer
+생성자(constructur)의 역활
+
+private 정보 은닉 기능
+
+Static - 개체 생성을 안하더라도 메모리에 상주시켜주는 기능
+
+지역변수/멤버변수/static변수(클래스)
+parameter안에 들어가는 값은 
